@@ -1,0 +1,77 @@
+{
+  "name": "@core/minio-client",
+  "version": "0.0.4",
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "release": "yarn build && release-it",
+    "clean": "rimraf dist ",
+    "build": "tsup src/lib/index.ts  --format esm,cjs   --dts --treeshake",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "build2": "tsc && vite build",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "dependencies": {
+    "@craftjs/core": "^0.2.3",
+    "@faker-js/faker": "^8.3.1",
+    "axios": "^1.6.2",
+    "clsx": "^2.0.0",
+    "crypto": "^1.0.1",
+    "nanoid": "^5.0.3",
+    "react-contenteditable": "^3.3.7",
+    "react-icons": "^4.12.0",
+    "spark-md5": "^3.0.2",
+    "styled-components": "^6.1.1",
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "antd": ">=4.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.32",
+    "@types/react-dom": "^18.2.14",
+    "@types/spark-md5": "^3.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "antd": "4",
+    "autoprefixer": "^10.4.16",
+    "clean-package": "^2.2.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "release-it": "^16.3.0",
+    "tailwindcss": "^3.3.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "button",
+    "button-group",
+    "react",
+    "component",
+    "clickable",
+    "tabbable"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "huang",
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://svn.xjjchain.com:8081/repository/npm-l/"
+  },
+  "clean-package": "./clean-package.config.json"
+}
