@@ -13,19 +13,23 @@ export const ProFormContainer = (
     connectors: { connect, drag },
   } = useNode();
   // grid   grid-cols-2 gap-4 auto-rows-min
+  console.log(props, "props");
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
       className="w-full min-h-[200px] p-8 bg-white  shadow-sm   rounded-md	"
     >
-      <ProForm>{children}</ProForm>
+      <ProForm {...props}>{children}</ProForm>
     </div>
   );
 };
 
+const proFormContainerDefaultProps = {
+  grid: true,
+};
 ProFormContainer.craft = {
   displayName: "ProFormContainer",
-  props: {},
+  props: proFormContainerDefaultProps,
   related: {
     settings: ProFormContainerSettings,
   },
