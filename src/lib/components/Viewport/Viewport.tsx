@@ -17,12 +17,12 @@ export const Viewport = ({ children }: PropsWithChildren<IViewportPorps>) => {
   }));
 
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-full page-container">
       <Header />
       <div className=" flex flex-1  w-full h-full  bg-[#f9fafc]">
         <Toolbox />
         <div
-          className="relative flex-1   h-full  overflow-auto  transition p-8"
+          className="craftjs-renderer relative flex-1   h-full  overflow-auto  transition p-4"
           ref={(ref) => connectors.select(connectors.hover(ref!, ""), "")}
         >
           <div className="relative flex-col flex items-center pt-8">

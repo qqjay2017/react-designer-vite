@@ -1,33 +1,28 @@
-import React, { PropsWithChildren } from "react";
 import { Frame, Editor as InnerEditor, Element } from "@craftjs/core";
-import { TextComponent } from "../TextComponent";
 
-import { Container } from "../Container/Container";
 import { Viewport } from "../Viewport";
-import { StartContainer } from "../Container";
-import { Card, CardBottom, CardTop } from "../Card";
+import { ProFormContainer, StartContainer } from "../Container";
+
+import { RenderNode } from "../RenderNode";
+import { Text } from "../../fields";
+
 export const Editor = () => {
   return (
-    <div className=" relative  h-screen w-screen">
+    <div className=" relative  h-screen w-screen overflow-hidden">
       <InnerEditor
         resolver={{
-          StartContainer,
-          TextComponent,
-          Container,
-          Card,
-          CardBottom,
-          CardTop,
+          ProFormContainer,
+          Text,
         }}
+        // 统一的渲染处理
+        onRender={RenderNode}
       >
         <Viewport>
           <Frame>
-            <Element
-              canvas
-              is={StartContainer}
-              width="800px"
-              height="auto"
-              custom={{ displayName: "App" }}
-            ></Element>
+            <Element canvas is={ProFormContainer}>
+              <Text label="123" />
+              <Text label="456" />
+            </Element>
           </Frame>
         </Viewport>
       </InnerEditor>

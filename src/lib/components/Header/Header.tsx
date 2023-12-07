@@ -19,8 +19,10 @@ export const Header = () => {
           console.log(actions, "actions");
           const json = query.serialize();
           const lz1 = lz.encodeBase64(lz.compress(json));
-          window.jjj = lz1;
-          console.log(json, JSON.parse(json), "json");
+          // 解码
+          //   const json = lz.decompress(lz.decodeBase64(stateToLoad));
+          // actions.deserialize(json);
+          console.log(lz1, "lz1");
         }}
       >
         actions

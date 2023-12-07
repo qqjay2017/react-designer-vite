@@ -1,8 +1,7 @@
 import { useEditor } from "@craftjs/core";
-import { Button } from "antd";
-import { TextComponent } from "../TextComponent";
+
 import { WeightBtn } from "./WeightBtn";
-import { Card } from "../Card";
+import { Text } from "../../fields";
 
 export const Toolbox = () => {
   const { connectors } = useEditor();
@@ -11,13 +10,9 @@ export const Toolbox = () => {
       <div className="relative w-[268px] pt-11 pl-2">
         <WeightBtn
           ref={(ref) =>
-            connectors.create(ref!, <TextComponent text="Hi world" />)
+            connectors.create(ref!, <Text label="TextTextTextText" />)
           }
-          name="TextComponent"
-        />
-        <WeightBtn
-          ref={(ref) => connectors.create(ref!, <Card />)}
-          name="Card"
+          name="Text"
         />
       </div>
     </div>

@@ -16,10 +16,10 @@ export const TextComponent = ({ text, colSpan = 1 }: any) => {
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className={cn(
-        `col-span-${colSpan}`,
-        "min-h-[86px] border-border border-1"
-      )}
+      className={cn("min-h-[86px] border-border border-1 p-2 m-2")}
+      style={{
+        gridColumn: `span ${colSpan} / span ${colSpan}`,
+      }}
     >
       <h2>{text}</h2>
     </div>

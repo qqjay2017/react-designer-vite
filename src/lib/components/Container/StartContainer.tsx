@@ -9,11 +9,11 @@ export const StartContainer = ({
   const {
     connectors: { connect, drag },
   } = useNode();
-  console.log(props, "StartContainer");
+
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className="w-full min-h-[200px] bg-white p-2 bg-[ #F9FAFC]  grid   grid-cols-2 gap-4 auto-rows-min shadow-sm   rounded-md	"
+      className="w-full min-h-[200px] bg-white p-8 bg-[ #F9FAFC]  grid   grid-cols-2 gap-4 auto-rows-min shadow-sm   rounded-md	"
     >
       {children}
     </div>
