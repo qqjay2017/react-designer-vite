@@ -20,6 +20,7 @@ export const Text = (props: any) => {
     <div
       ref={(ref) => connect(drag(ref!))}
       className={cn(
+        "cursor-move",
         "ant-col",
         colSpan ? `ant-col-${colSpan}` : "ant-col-xs-24"
       )}

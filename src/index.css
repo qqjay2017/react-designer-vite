@@ -10,7 +10,9 @@
         --card-foreground: 224 71.4% 4.1%;
         --popover: 0 0% 100%;
         --popover-foreground: 224 71.4% 4.1%;
-        --primary: 220.9 39.3% 11%;
+        /* #1677ff */
+        --primary: 215.021, 100%, 54%;
+
         --primary-foreground: 210 20% 98%;
         --secondary: 220 14.3% 95.9%;
         --secondary-foreground: 220.9 39.3% 11%;
@@ -49,4 +51,54 @@
 
 .transition {
     transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.craftjs-renderer .ant-input,
+.craftjs-renderer .ant-input-number,
+.craftjs-renderer .ant-input-affix-wrapper,
+.craftjs-renderer .ant-cascader-picker,
+.craftjs-renderer .ant-picker-input,
+.craftjs-renderer .ant-picker,
+.craftjs-renderer .ant-cascader-picker-label,
+.craftjs-renderer .ant-slider,
+.craftjs-renderer .ant-checkbox,
+.craftjs-renderer .ant-rate,
+.craftjs-renderer .ant-switch,
+.craftjs-renderer .ant-radio,
+.craftjs-renderer .ant-radio-wrapper,
+.craftjs-renderer .ant-checkbox-group,
+.craftjs-renderer .ant-checkbox-wrapper,
+.craftjs-renderer .ant-radio-group,
+.craftjs-renderer .ant-upload,
+.craftjs-renderer .ant-transfer,
+.craftjs-renderer .ant-select,
+.craftjs-renderer .ant-select-selector {
+    pointer-events: none !important;
+}
+
+.craftjs-renderer .ant-input input,
+.craftjs-renderer .ant-input-number input,
+.craftjs-renderer .ant-input-affix-wrapper input,
+.craftjs-renderer .ant-cascader-picker input,
+.craftjs-renderer .ant-picker-input input,
+.craftjs-renderer .ant-picker input,
+.craftjs-renderer .ant-cascader-picker-label input,
+.craftjs-renderer .ant-slider input,
+.craftjs-renderer .ant-checkbox input,
+.craftjs-renderer .ant-rate input,
+.craftjs-renderer .ant-switch input,
+.craftjs-renderer .ant-radio input,
+.craftjs-renderer .ant-radio-wrapper input,
+.craftjs-renderer .ant-checkbox-group input,
+.craftjs-renderer .ant-checkbox-wrapper input,
+.craftjs-renderer .ant-radio-group input,
+.craftjs-renderer .ant-upload input,
+.craftjs-renderer .ant-transfer input,
+.craftjs-renderer .ant-select input,
+.craftjs-renderer .ant-select-selector input {
+    pointer-events: none !important;
+}
+
+.craftjs-renderer .anticon svg {
+    pointer-events: none;
 }

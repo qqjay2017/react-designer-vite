@@ -17,9 +17,16 @@ export const ProFormContainer = (
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className="w-full min-h-[200px] p-8 bg-white  shadow-sm   rounded-md	"
+      className="w-full min-h-[300px] p-8 bg-white  shadow-sm   rounded-md	"
     >
-      <ProForm {...props}>{children}</ProForm>
+      <ProForm
+        {...props}
+        rowProps={{
+          gutter: [16, 16],
+        }}
+      >
+        {children}
+      </ProForm>
     </div>
   );
 };

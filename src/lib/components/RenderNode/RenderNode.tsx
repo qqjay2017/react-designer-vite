@@ -2,7 +2,7 @@ import { ROOT_NODE, useEditor, useNode } from "@craftjs/core";
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { IndicatorDiv, RenderNodeBtn } from "./styles";
 import ReactDOM from "react-dom";
-import { IoMdMove, IoMdArrowUp, IoMdTrash } from "react-icons/io";
+import { IoMdMove, IoMdTrash } from "react-icons/io";
 
 export const RenderNode = ({ render }: { render?: any }) => {
   const { id } = useNode();
@@ -46,11 +46,13 @@ export const RenderNode = ({ render }: { render?: any }) => {
       return {
         top: "0px",
         left: "0px",
+        bottom: "0px",
       };
     }
     const { top, left, bottom } = dom
       ? dom.getBoundingClientRect()
       : { top: 0, left: 0, bottom: 0 };
+    console.log(top, "top");
     return {
       top: `${top > 0 ? top : bottom}px`,
       left: `${left}px`,
@@ -85,19 +87,25 @@ export const RenderNode = ({ render }: { render?: any }) => {
         ? ReactDOM.createPortal(
             <IndicatorDiv
               ref={currentRef}
-              className="px-2 py-2 text-white bg-primary fixed flex items-center"
+              className=" text-white  fixed flex pb-1 items-end"
               style={{
                 left: getPos(dom).left,
                 top: getPos(dom).top,
                 zIndex: 9999,
               }}
             >
-              <div className="flex-1 mr-4 text-primary-foreground">{name}</div>
+              <RenderNodeBtn className="flex-1  bg-primary  text-primary-foreground mr-1 ">
+                {name}
+              </RenderNodeBtn>
               {moveable ? (
-                <RenderNodeBtn className="mr-2 cursor-move" ref={drag as any}>
+                <RenderNodeBtn
+                  className="cursor-move  bg-primary  text-primary-foreground mr-1"
+                  ref={drag as any}
+                >
                   <IoMdMove />
                 </RenderNodeBtn>
               ) : null}
+
               {/* {id !== ROOT_NODE && (
                 <RenderNodeBtn
                   className="mr-2 cursor-pointer"
@@ -110,7 +118,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
               )} */}
               {deletable ? (
                 <RenderNodeBtn
-                  className="cursor-pointer"
+                  className="cursor-pointer   bg-primary  text-primary-foreground mr-1"
                   onMouseDown={(e: React.MouseEvent) => {
                     e.stopPropagation();
                     actions.delete(id);

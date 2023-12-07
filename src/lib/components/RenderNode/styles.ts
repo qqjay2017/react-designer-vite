@@ -14,8 +14,11 @@ export const IndicatorDiv = styled.div`
 `;
 
 export const RenderNodeBtn = styled.a`
-  padding: 0 0px;
+  border-radius: 2px;
+  padding: 6px 8px;
   opacity: 0.9;
+  height: 20px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   > div {
