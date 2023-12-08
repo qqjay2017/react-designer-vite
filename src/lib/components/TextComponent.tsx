@@ -11,7 +11,6 @@ export const TextComponent = ({ text, colSpan = 1 }: any) => {
     selected: state.events.selected,
     dragged: state.events.dragged,
   }));
-  console.log(selected, colSpan, "selected TextComponent");
 
   return (
     <div

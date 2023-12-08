@@ -1,10 +1,9 @@
-import { ProFormText } from "@ant-design/pro-components";
 import { useNode } from "@craftjs/core";
-import { TextSettings } from "./TextSettings";
+import React, { PropsWithChildren } from "react";
+import { cn } from "../../utils";
 
-import { cn } from "../../utils/cn";
-
-export const Text = (props: any) => {
+export const FieldWrap = (props: PropsWithChildren<any>) => {
+  const { colSpan = 12, children } = props;
   const {
     connectors: { connect, drag },
     selected,
@@ -13,8 +12,6 @@ export const Text = (props: any) => {
     selected: state.events.selected,
     dragged: state.events.dragged,
   }));
-
-  const { colSpan, ...restProps } = props;
 
   return (
     <div
@@ -25,17 +22,7 @@ export const Text = (props: any) => {
         colSpan ? `ant-col-${colSpan}` : "ant-col-xs-24"
       )}
     >
-      <ProFormText {...restProps} />
+      {children}
     </div>
   );
-};
-
-const textDefaultPorps = {
-  colSpan: "12",
-};
-Text.craft = {
-  props: textDefaultPorps,
-  related: {
-    settings: TextSettings,
-  },
 };

@@ -2,6 +2,7 @@ import { ProForm } from "@ant-design/pro-components";
 import React, { PropsWithChildren } from "react";
 import { ProFormContainerSettings } from "./ProFormContainerSettings";
 import { useNode } from "@craftjs/core";
+import { ProFormContainerConfig } from "./ProFormContainerConfig";
 
 interface IProFormContainerPorps {}
 
@@ -13,7 +14,7 @@ export const ProFormContainer = (
     connectors: { connect, drag },
   } = useNode();
   // grid   grid-cols-2 gap-4 auto-rows-min
-  console.log(props, "props");
+
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
@@ -31,12 +32,8 @@ export const ProFormContainer = (
   );
 };
 
-const proFormContainerDefaultProps = {
-  grid: true,
-};
 ProFormContainer.craft = {
-  displayName: "ProFormContainer",
-  props: proFormContainerDefaultProps,
+  ...ProFormContainerConfig,
   related: {
     settings: ProFormContainerSettings,
   },

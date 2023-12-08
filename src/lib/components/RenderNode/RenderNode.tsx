@@ -3,6 +3,8 @@ import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { IndicatorDiv, RenderNodeBtn } from "./styles";
 import ReactDOM from "react-dom";
 import { IoMdMove, IoMdTrash } from "react-icons/io";
+import { FormElementConfigMap } from "../../fields";
+import { ElementsType } from "../../fields/Field";
 
 export const RenderNode = ({ render }: { render?: any }) => {
   const { id } = useNode();
@@ -18,15 +20,19 @@ export const RenderNode = ({ render }: { render?: any }) => {
     deletable,
     connectors: { drag },
     parent,
+    nodeData,
   } = useNode((node) => ({
     isHover: node.events.hovered,
     dom: node.dom,
     name: node.data.custom.displayName || node.data.displayName,
+    nodeData: node.data,
     moveable: query.node(node.id).isDraggable(),
     deletable: query.node(node.id).isDeletable(),
     parent: node.data.parent,
     props: node.data.props,
   }));
+
+  const elemConfig = FormElementConfigMap[name as ElementsType];
 
   const currentRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +58,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
     const { top, left, bottom } = dom
       ? dom.getBoundingClientRect()
       : { top: 0, left: 0, bottom: 0 };
-    console.log(top, "top");
+
     return {
       top: `${top > 0 ? top : bottom}px`,
       left: `${left}px`,
@@ -94,15 +100,20 @@ export const RenderNode = ({ render }: { render?: any }) => {
                 zIndex: 9999,
               }}
             >
-              <RenderNodeBtn className="flex-1  bg-primary  text-primary-foreground mr-1 ">
-                {name}
+              <RenderNodeBtn className="flex-1  flex items-center justify-center bg-primary  text-primary-foreground mr-1 ">
+                {elemConfig?.designerBtnElement?.icon && (
+                  <elemConfig.designerBtnElement.icon className="text-xs" />
+                )}
+                <span className="ml-1">
+                  {elemConfig?.designerBtnElement?.label || name}
+                </span>
               </RenderNodeBtn>
               {moveable ? (
                 <RenderNodeBtn
                   className="cursor-move  bg-primary  text-primary-foreground mr-1"
                   ref={drag as any}
                 >
-                  <IoMdMove />
+                  <IoMdMove className="text-[12px]" />
                 </RenderNodeBtn>
               ) : null}
 
@@ -124,7 +135,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
                     actions.delete(id);
                   }}
                 >
-                  <IoMdTrash />
+                  <IoMdTrash className="text-[12px]" />
                 </RenderNodeBtn>
               ) : null}
             </IndicatorDiv>,
