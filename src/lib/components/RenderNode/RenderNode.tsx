@@ -1,10 +1,11 @@
 import { ROOT_NODE, useEditor, useNode } from "@craftjs/core";
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
-import { IndicatorDiv, RenderNodeBtn } from "./styles";
+
 import ReactDOM from "react-dom";
 import { IoMdMove, IoMdTrash } from "react-icons/io";
 import { FormElementConfigMap } from "../../fields";
 import { ElementsType } from "../../fields/Field";
+import { RenderNodeBtn } from "./RenderNodeBtn";
 
 export const RenderNode = ({ render }: { render?: any }) => {
   const { id } = useNode();
@@ -91,9 +92,9 @@ export const RenderNode = ({ render }: { render?: any }) => {
     <>
       {showPortalFlag
         ? ReactDOM.createPortal(
-            <IndicatorDiv
+            <div
               ref={currentRef}
-              className=" text-white  fixed flex pb-1 items-end"
+              className=" text-white  fixed flex pb-1 items-end height-[30px]  mt-[-29px] text-[12px] "
               style={{
                 left: getPos(dom).left,
                 top: getPos(dom).top,
@@ -138,7 +139,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
                   <IoMdTrash className="text-[12px]" />
                 </RenderNodeBtn>
               ) : null}
-            </IndicatorDiv>,
+            </div>,
             document.querySelector(".page-container")!
           )
         : null}
