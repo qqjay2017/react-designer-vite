@@ -8,7 +8,7 @@ import { FormElements } from "../../fields";
 
 export const Editor = () => {
   return (
-    <div className=" relative  h-screen w-screen overflow-hidden">
+    <div className="innerEditorWrap relative  overflow-hidden">
       <InnerEditor
         resolver={{
           ...FormElements,

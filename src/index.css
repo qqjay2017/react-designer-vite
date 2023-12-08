@@ -53,6 +53,12 @@
     transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+.innerEditorWrap {
+    min-width: 1200px;
+    min-height: 680px;
+    height: calc(100vh - 48px);
+}
+
 .craftjs-renderer .ant-input,
 .craftjs-renderer .ant-input-number,
 .craftjs-renderer .ant-input-affix-wrapper,
