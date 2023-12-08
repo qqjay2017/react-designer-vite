@@ -55,8 +55,11 @@
 
 .innerEditorWrap {
     min-width: 1200px;
-    min-height: 680px;
-    height: calc(100vh - 48px);
+    min-height: calc(100vh - 48px);
+    height: 100%;
+    width: 100%;
+    ;
+
 }
 
 .craftjs-renderer .ant-input,
