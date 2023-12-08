@@ -9,6 +9,7 @@ const proFormContainerDefaultProps = {
 
 export const ProFormContainerConfig: FormElement = {
   displayName: proFormContainerType,
+  group: "container",
   construct: (id: string) => ({
     id,
     type: proFormContainerType,

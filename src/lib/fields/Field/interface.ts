@@ -1,11 +1,20 @@
-export type ElementsType = "TextField" | "ProFormContainer";
+export type ElementsType =
+  | "TextField"
+  | "ProFormContainer"
+  | "TableCommonColumn"
+  | "TableContainer";
+
+export type ElementGroupType = "formField" | "tableColumn" | "container";
+("container");
 export type FormElementInstance = {
   id: string;
   type: ElementsType;
   extraAttributes?: Record<string, any>;
 };
+
 export interface FormElement {
   displayName: ElementsType;
+  group: ElementGroupType;
   construct: (id: string) => FormElementInstance;
   designerBtnElement: {
     icon: React.ElementType;

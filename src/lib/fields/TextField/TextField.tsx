@@ -18,6 +18,9 @@ export const TextField = (props: any) => {
 
 TextField.craft = {
   ...textFieldFormElementConfig,
+  custom: {
+    ...textFieldFormElementConfig,
+  },
 
   related: {
     settings: TextSettings,

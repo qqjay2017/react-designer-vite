@@ -2,7 +2,11 @@ import React from "react";
 import { ElementsType, FormElement } from "./Field/interface";
 import { TextField, textFieldFormElementConfig } from "./TextField";
 import { ProFormContainerConfig } from "../components/Container/ProFormContainerConfig";
-import { ProFormContainer } from "../components/Container";
+import { ProFormContainer, TableContainer } from "../components/Container";
+import {
+  TableCommonColumn,
+  tableCommonColumnConfig,
+} from "./TableCommonColumn";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -11,6 +15,8 @@ type FormElementsType = {
 export const FormElements: FormElementsType = {
   TextField: TextField,
   ProFormContainer: ProFormContainer,
+  TableCommonColumn: TableCommonColumn,
+  TableContainer: TableContainer,
 };
 
 type FormElementConfigMapType = {
@@ -20,4 +26,6 @@ type FormElementConfigMapType = {
 export const FormElementConfigMap: FormElementConfigMapType = {
   TextField: textFieldFormElementConfig,
   ProFormContainer: ProFormContainerConfig,
+  TableCommonColumn: tableCommonColumnConfig,
+  TableContainer: tableCommonColumnConfig,
 };

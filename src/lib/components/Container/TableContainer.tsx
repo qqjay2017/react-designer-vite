@@ -1,14 +1,14 @@
 import { ProForm } from "@ant-design/pro-components";
 import React, { PropsWithChildren } from "react";
-import { ProFormContainerSettings } from "./ProFormContainerSettings";
+import { TableContainerSettings } from "./TableContainerSettings";
 import { useNode } from "@craftjs/core";
-import { ProFormContainerConfig } from "./ProFormContainerConfig";
+import { TableContainerConfig } from "./TableContainerConfig";
 import { get } from "lodash-es";
 import { ElementGroupType } from "../../fields/Field";
-interface IProFormContainerPorps {}
+interface ITableContainerPorps {}
 
-export const ProFormContainer = (
-  props: PropsWithChildren<IProFormContainerPorps>
+export const TableContainer = (
+  props: PropsWithChildren<ITableContainerPorps>
 ) => {
   const { children } = props;
   const {
@@ -19,24 +19,17 @@ export const ProFormContainer = (
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className="w-full min-h-[300px] p-8 bg-white  shadow-sm   rounded-md	"
+      className="w-full min-h-[70px] p-8 bg-white  shadow-sm   rounded-md	 mt-5"
     >
-      <ProForm
-        {...props}
-        rowProps={{
-          gutter: [16, 16],
-        }}
-      >
-        {children}
-      </ProForm>
+      <div className="flex items-center">{children}</div>
     </div>
   );
 };
 
-ProFormContainer.craft = {
-  ...ProFormContainerConfig,
+TableContainer.craft = {
+  ...TableContainerConfig,
   custom: {
-    ...ProFormContainerConfig,
+    ...TableContainerConfig,
   },
   rules: {
     canMoveIn: (incomingNode: any) => {
@@ -45,11 +38,11 @@ ProFormContainer.craft = {
         "[0].data.custom.group",
         ""
       );
-      console.log(incomingNode, group);
-      return group === "formField";
+
+      return group === "tableColumn";
     },
   },
   related: {
-    settings: ProFormContainerSettings,
+    settings: TableContainerSettings,
   },
 };

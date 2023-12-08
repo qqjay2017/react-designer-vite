@@ -8,6 +8,7 @@ export const textDefaultPorps = {
 
 export const textFieldFormElementConfig: FormElement = {
   displayName: textFieldType,
+  group: "formField",
   construct: (id: string) => ({
     id,
     type: textFieldType,

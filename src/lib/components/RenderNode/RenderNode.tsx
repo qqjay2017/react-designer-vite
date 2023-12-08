@@ -38,7 +38,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
   const currentRef = useRef<HTMLDivElement>(null);
 
   const noShowSelect = useMemo(() => {
-    return name == "StartContainer";
+    return name == "StartContainer" || name == "Container";
   }, [name]);
 
   useEffect(() => {
