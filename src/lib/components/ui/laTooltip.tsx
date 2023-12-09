@@ -6,15 +6,16 @@ import {
   TooltipTrigger,
 } from "./tooltip";
 
-import { FaCircleQuestion } from "react-icons/fa6";
+import { BsQuestionCircle } from "react-icons/bs";
 
 export const LabelTooltip = ({ content }: { content: string }) => {
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger className="ml-2 mt-0" asChild>
-          <div className=" w-4 h-4">
-            <FaCircleQuestion
+          <div className=" w-[12px] h-[12px] flex items-center justify-center">
+            <BsQuestionCircle
+              className="text-[12px]"
               style={{
                 color: "#acb3bd",
               }}

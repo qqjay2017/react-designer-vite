@@ -6,6 +6,7 @@ import { Container, ProFormContainer, TableContainer } from "../Container";
 import { RenderNode } from "../RenderNode";
 import { FormElements } from "../../fields";
 import { IHeaderProps } from "../Header/interface";
+import { TextField } from "../../fields/TextField";
 export interface IDesignerClientProps {
   headerProps?: IHeaderProps;
 }
@@ -24,7 +25,9 @@ export const DesignerClient = (props: IDesignerClientProps) => {
         <Viewport headerProps={props.headerProps}>
           <Frame>
             <Element canvas is={Container}>
-              <Element canvas is={ProFormContainer}></Element>
+              <Element canvas is={ProFormContainer}>
+                <TextField />
+              </Element>
               <Element canvas is={TableContainer}></Element>
             </Element>
           </Frame>

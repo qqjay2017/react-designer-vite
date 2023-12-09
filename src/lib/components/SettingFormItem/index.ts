@@ -3,18 +3,20 @@ import { StrTypeFormItem } from "./StrTypeFormItem";
 import { SingleSelectTypeFormItem } from "./SingleSelectTypeFormItem";
 import { NumTypeFormItem } from "./NumTypeFormItem";
 import { BoolSelectTypeFormItem } from "./BoolSelectTypeFormItem";
+import { CheckFormItem } from "./CheckFormItem";
 
 type SettingFormItemKey =
   | "StrTypeFormItem"
   | "SingleSelectTypeFormItem"
   | "NumTypeFormItem"
+  | "CheckFormItem"
   | "BoolSelectTypeFormItem";
 
 export interface IBaseFormItemProps {
   label: string;
   value: any;
   tooltip?: string;
-  onChange: (e: string) => any;
+  onChange: any;
   options?: { value: any; label: any }[];
 }
 export const SettingFormItem: Record<
@@ -25,4 +27,5 @@ export const SettingFormItem: Record<
   SingleSelectTypeFormItem: SingleSelectTypeFormItem,
   NumTypeFormItem: NumTypeFormItem,
   BoolSelectTypeFormItem,
+  CheckFormItem,
 };

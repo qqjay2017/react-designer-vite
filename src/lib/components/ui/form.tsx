@@ -16,12 +16,12 @@ export const FormItem = ({
   return (
     <div
       className={cn(
-        "space-y-0 flex   items-start justify-between border p-3  my-2",
+        "space-y-0 flex   items-start justify-between border px-3  py-2  ",
         horizontal ? "flex-row" : "flex-col"
       )}
     >
-      <div className=" mb-2 flex items-center">
-        <Label className="  text-sm">{label}</Label>
+      <div className=" mb-2 flex items-center justify-center">
+        <Label className="  text-[14px]">{label}</Label>
         {tooltip && <LabelTooltip content={tooltip} />}
       </div>
       {children}

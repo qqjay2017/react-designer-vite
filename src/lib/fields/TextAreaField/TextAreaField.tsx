@@ -1,27 +1,24 @@
 import { ProFormText, ProFormTextArea } from "@ant-design/pro-components";
 
-import { TextSettings } from "./TextSettings";
-
 import { FieldWrap } from "../Field/FieldWrap";
 import { pickFieldProps } from "../Field/pickFieldProps";
+import { textFieldFormElementConfig } from "../TextField";
+import { TextSettings } from "../TextField/TextSettings";
 
-import { textFieldFormElementConfig } from "./textFieldFormElementConfig";
-
-export const TextField = (props: any) => {
+export const TextAreaField = (props: any) => {
   const { fieldWrapProps, formItemProps } = pickFieldProps(props);
   return (
     <FieldWrap {...fieldWrapProps}>
-      <ProFormText {...formItemProps} />
+      <ProFormTextArea {...formItemProps} />
     </FieldWrap>
   );
 };
 
-TextField.craft = {
+TextAreaField.craft = {
   ...textFieldFormElementConfig,
   custom: {
     ...textFieldFormElementConfig,
   },
-
   related: {
     settings: TextSettings,
   },

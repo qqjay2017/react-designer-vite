@@ -28,7 +28,7 @@ export const SettingsPanel = () => {
       className="w-[285px] overflow-auto bg-white pb-6 border-l-1 border-t-0 border-border border-solid"
       id="DesignerSettingsPanel"
     >
-      <div data-cy="settings-panel">
+      <div data-cy="settings-panel " className="pt-2">
         {selected.settings && React.createElement(selected.settings)}
       </div>
       {/* {selected.isDeletable ? (

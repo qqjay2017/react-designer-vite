@@ -8,6 +8,7 @@ import {
   tableCommonColumnConfig,
 } from "./TableCommonColumn";
 import { TableContainerConfig } from "../components/Container/TableContainerConfig";
+import { TextAreaField, textAreaFieldFormElementConfig } from "./TextAreaField";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -18,6 +19,7 @@ export const FormElements: FormElementsType = {
   ProFormContainer: ProFormContainer,
   TableCommonColumn: TableCommonColumn,
   TableContainer: TableContainer,
+  TextAreaField,
 };
 
 type FormElementConfigMapType = {
@@ -29,4 +31,5 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   ProFormContainer: ProFormContainerConfig,
   TableCommonColumn: tableCommonColumnConfig,
   TableContainer: TableContainerConfig,
+  TextAreaField: textAreaFieldFormElementConfig,
 };

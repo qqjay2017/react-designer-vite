@@ -2,6 +2,7 @@ export type ElementsType =
   | "TextField"
   | "ProFormContainer"
   | "TableCommonColumn"
+  | "TextAreaField"
   | "TableContainer";
 
 export type ElementGroupType = "formField" | "tableColumn" | "container";
