@@ -1,7 +1,6 @@
 import { useEditor } from "@craftjs/core";
 import { Button } from "antd";
 
-import lz from "lzutf8";
 import { IHeaderAction } from "./interface";
 import { useEffect } from "react";
 
@@ -27,9 +26,12 @@ export const Header = ({
   }, [actions]);
 
   return (
-    <header className="h-[50px]  bg-white  flex    shadow-md relative z-10">
-      Header
+    <header
+      className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative z-20 items-center justify-end px-9 "
+      style={{ zIndex: "9999" }}
+    >
       <Button
+        type="primary"
         onClick={() => {
           const json = query.serialize();
           headerActions?.save && headerActions?.save(json);

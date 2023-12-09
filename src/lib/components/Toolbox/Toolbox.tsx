@@ -8,7 +8,7 @@ export const Toolbox = () => {
         <Label>表单控件</Label>
         <div className="grid grid-cols-2 my-3">
           <WeightBtn weightKey="TextField" />
-          <WeightBtn weightKey="TextField" />
+          {/* <WeightBtn weightKey="TextField" /> */}
         </div>
         <Label>表格控件</Label>
         <div className="grid grid-cols-2 my-3">

@@ -98,11 +98,10 @@ export const RenderNode = ({ render }: { render?: any }) => {
         ? ReactDOM.createPortal(
             <div
               ref={currentRef}
-              className=" text-white  fixed flex pb-1 items-end height-[30px]  mt-[-29px] text-[12px] "
+              className=" text-white  fixed flex pb-1 items-end height-[30px]  mt-[-29px] text-[12px]   z-10"
               style={{
                 left: getPos(dom).left,
                 top: getPos(dom).top,
-                zIndex: 9999,
               }}
             >
               <RenderNodeBtn className="flex-1  flex items-center justify-center bg-primary  text-primary-foreground mr-1 ">
