@@ -8,10 +8,10 @@ export const BoolSelectTypeFormItem = ({
   label,
   value,
   onChange,
+  tooltip,
 }: ISingleSelectTypeFormItemProps) => {
   return (
-    <FormItem>
-      <FormLabel>{label}</FormLabel>
+    <FormItem label={label} tooltip={tooltip} horizontal>
       <Switch
         style={{}}
         checked={value}

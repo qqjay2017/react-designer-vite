@@ -13,6 +13,7 @@ type SettingFormItemKey =
 export interface IBaseFormItemProps {
   label: string;
   value: any;
+  tooltip?: string;
   onChange: (e: string) => any;
   options?: { value: any; label: any }[];
 }

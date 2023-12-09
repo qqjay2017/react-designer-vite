@@ -1,10 +1,29 @@
 import { PropsWithChildren } from "react";
 import { Label } from "./label";
 import { cn } from "../../utils";
+import { LabelTooltip } from "./LabelTooltip";
 
-export const FormItem = ({ children }: PropsWithChildren) => {
+export const FormItem = ({
+  children,
+  label,
+  tooltip,
+  horizontal = false,
+}: PropsWithChildren<{
+  label?: string;
+  tooltip?: string;
+  horizontal?: boolean;
+}>) => {
   return (
-    <div className="space-y-0 flex items-center justify-between border p-3 shadow-sm my-2">
+    <div
+      className={cn(
+        "space-y-0 flex   items-start justify-between border p-3  my-2",
+        horizontal ? "flex-row" : "flex-col"
+      )}
+    >
+      <div className=" mb-2 flex items-center">
+        <Label className="  text-sm">{label}</Label>
+        {tooltip && <LabelTooltip content={tooltip} />}
+      </div>
       {children}
     </div>
   );

@@ -19,6 +19,7 @@
     "@craftjs/core": "^0.2.3",
     "@faker-js/faker": "^8.3.1",
     "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "@types/lodash-es": "^4.17.12",
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",

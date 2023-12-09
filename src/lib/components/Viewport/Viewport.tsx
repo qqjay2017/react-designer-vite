@@ -5,16 +5,15 @@ import { Toolbox } from "../Toolbox";
 import { Header } from "../Header";
 import { SettingsPanel } from "../SettingsPanel";
 
-import { IHeaderAction } from "../Header/interface";
+import { IHeaderProps } from "../Header/interface";
 interface IViewportPorps {
-  headerActions?: IHeaderAction;
   defaultJson?: any;
+  headerProps?: IHeaderProps;
 }
 
 export const Viewport = ({
   children,
-  headerActions,
-  defaultJson,
+  headerProps,
 }: PropsWithChildren<IViewportPorps>) => {
   const {
     enabled,
@@ -26,7 +25,7 @@ export const Viewport = ({
 
   return (
     <div className="flex flex-col w-full h-full page-container">
-      <Header headerActions={headerActions} defaultJson={defaultJson} />
+      <Header {...headerProps} />
       <div className=" flex flex-1  w-full h-full  bg-[#f9fafc]">
         <Toolbox />
         <div

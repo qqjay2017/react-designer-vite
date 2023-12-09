@@ -5,10 +5,9 @@ import { Container, ProFormContainer, TableContainer } from "../Container";
 
 import { RenderNode } from "../RenderNode";
 import { FormElements } from "../../fields";
-import { IHeaderAction } from "../Header/interface";
+import { IHeaderAction, IHeaderProps } from "../Header/interface";
 export interface IDesignerClientProps {
-  headerActions?: IHeaderAction;
-  defaultJson?: any;
+  headerProps?: IHeaderProps;
 }
 
 export const DesignerClient = (props: IDesignerClientProps) => {
@@ -22,10 +21,7 @@ export const DesignerClient = (props: IDesignerClientProps) => {
         // 统一的渲染处理
         onRender={RenderNode}
       >
-        <Viewport
-          headerActions={props.headerActions}
-          defaultJson={props.defaultJson}
-        >
+        <Viewport headerProps={props.headerProps}>
           <Frame>
             <Element canvas is={Container}>
               <Element canvas is={ProFormContainer}></Element>

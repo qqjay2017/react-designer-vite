@@ -34,12 +34,14 @@ export const TableContainerSettings = () => {
   return (
     <div>
       <StrTypeFormItem
+        tooltip="完整的接口地址"
         label="接口地址"
         value={apiUrl}
         onChange={(e) => setProp((props: any) => (props.apiUrl = e), 1000)}
       />
       <SingleSelectTypeFormItem
         label="请求方式"
+        tooltip="1111"
         value={apiMethod}
         options={[
           {
@@ -54,11 +56,13 @@ export const TableContainerSettings = () => {
         onChange={(e) => setProp((props: any) => (props.apiMethod = e), 1000)}
       />
       <StrTypeFormItem
+        tooltip="json解析时,表格数组的取值path"
         label="rows取值路径"
         value={dataPath}
         onChange={(e) => setProp((props: any) => (props.dataPath = e), 1000)}
       />
       <StrTypeFormItem
+        tooltip="json解析时,表格数量的取值path"
         label="totalPath取值路径"
         value={totalPath}
         onChange={(e) => setProp((props: any) => (props.totalPath = e), 1000)}
@@ -76,9 +80,9 @@ export const TableContainerSettings = () => {
         onChange={(e) => setProp((props: any) => (props.idFieldKey = e), 1000)}
       />
       {/* 接口参数 */}
-      <div className="p-3 my-2 border shadow-sm">
+      <div className="p-3 my-2 border ">
         <div className="flex items-center justify-between">
-          <Label className="mb-2">查询参数</Label>
+          <Label className="mb-2">QueryParam</Label>
           <Button
             className="mb-2"
             type="link"
@@ -169,7 +173,7 @@ export const TableContainerSettings = () => {
       {/* 接口请求头 */}
       <div className="p-3 my-2 border shadow-sm">
         <div className="flex items-center justify-between">
-          <Label className="mb-2">查询请求头</Label>
+          <Label className="mb-2">Header</Label>
           <Button
             className="mb-2"
             type="link"

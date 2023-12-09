@@ -1,15 +1,15 @@
 import { IBaseFormItemProps } from ".";
-import { FormItem, FormLabel } from "../ui/form";
+import { FormItem } from "../ui/form";
 import { Input } from "antd";
 
 export const StrTypeFormItem = ({
   label,
   value,
   onChange,
+  tooltip,
 }: IBaseFormItemProps) => {
   return (
-    <FormItem>
-      <FormLabel>{label}</FormLabel>
+    <FormItem label={label} tooltip={tooltip}>
       <Input
         style={{
           minWidth: 100,

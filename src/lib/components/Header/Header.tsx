@@ -1,16 +1,15 @@
 import { useEditor } from "@craftjs/core";
 import { Button } from "antd";
 
-import { IHeaderAction } from "./interface";
+import { IHeaderProps } from "./interface";
 import { useEffect } from "react";
+import { IoArrowBack } from "react-icons/io5";
 
 export const Header = ({
   headerActions = {},
   defaultJson,
-}: {
-  headerActions?: IHeaderAction;
-  defaultJson?: any;
-}) => {
+  headerName = "aaa",
+}: IHeaderProps) => {
   const { enabled, canUndo, canRedo, actions, query } = useEditor(
     (state, query) => ({
       enabled: state.options.enabled,
@@ -27,9 +26,18 @@ export const Header = ({
 
   return (
     <header
-      className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative z-20 items-center justify-end px-9 "
+      className="h-[50px]  min-h-[50px] bg-white  flex   shadow-sm relative z-20 items-center justify-end px-9 "
       style={{ zIndex: "9999" }}
     >
+      <div className="flex-1 items-center">
+        <IoArrowBack
+          className="   cursor-pointer "
+          onClick={(e: any) => {
+            headerActions?.back && headerActions?.back(e);
+          }}
+        />
+        <span className="ml-4 text-lg">{headerName}</span>
+      </div>
       <Button
         type="primary"
         onClick={() => {

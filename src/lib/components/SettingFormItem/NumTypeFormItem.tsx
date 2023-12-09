@@ -6,13 +6,13 @@ export const NumTypeFormItem = ({
   label,
   value,
   onChange,
+  tooltip,
 }: IBaseFormItemProps) => {
   return (
-    <FormItem>
-      <FormLabel>{label}</FormLabel>
+    <FormItem label={label} tooltip={tooltip}>
       <InputNumber
         style={{
-          minWidth: 100,
+          width: "100%",
         }}
         value={value}
         onChange={(e) => onChange && onChange(e)}
