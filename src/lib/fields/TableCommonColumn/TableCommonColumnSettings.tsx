@@ -10,6 +10,7 @@ export const TableCommonColumnSettings = () => {
     valueType,
     ellipsis,
     copyable,
+    width,
   } = useNode((node) => ({
     colSpan: node.data.props.colSpan,
     title: node.data.props.title,
@@ -33,7 +34,7 @@ export const TableCommonColumnSettings = () => {
       />
       <SettingFormItem.NumTypeFormItem
         label="宽度"
-        value={dataIndex}
+        value={width}
         onChange={(e) => setProp((props: any) => (props.width = e), 1000)}
       />
       {/* password 密码输入框

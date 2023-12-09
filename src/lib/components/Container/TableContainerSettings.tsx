@@ -86,6 +86,7 @@ export const TableContainerSettings = () => {
         </div>
         {queryParams && queryParams.length ? (
           <Table
+            rowKey={"id"}
             pagination={false}
             size="small"
             dataSource={queryParams}
@@ -118,7 +119,8 @@ export const TableContainerSettings = () => {
                       onChange={(e) => {
                         setProp(
                           (props: any) =>
-                            (props.queryParams[index]["name"] = e.target.value),
+                            (props.queryParams[index]["value"] =
+                              e.target.value),
                           1000
                         );
                       }}
@@ -155,6 +157,7 @@ export const TableContainerSettings = () => {
         </div>
         {apiHeader && apiHeader.length ? (
           <Table
+            rowKey={"id"}
             pagination={false}
             size="small"
             dataSource={apiHeader}
@@ -187,7 +190,7 @@ export const TableContainerSettings = () => {
                       onChange={(e) => {
                         setProp(
                           (props: any) =>
-                            (props.apiHeader[index]["name"] = e.target.value),
+                            (props.apiHeader[index]["value"] = e.target.value),
                           1000
                         );
                       }}

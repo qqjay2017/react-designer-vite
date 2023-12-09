@@ -14,6 +14,9 @@ export const SingleSelectTypeFormItem = ({
     <FormItem>
       <FormLabel>{label}</FormLabel>
       <Select
+        getPopupContainer={() =>
+          document.getElementById("DesignerSettingsPanel")!
+        }
         style={{
           minWidth: 100,
         }}
