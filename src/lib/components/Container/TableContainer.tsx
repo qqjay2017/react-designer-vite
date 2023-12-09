@@ -4,6 +4,7 @@ import { useNode } from "@craftjs/core";
 import { TableContainerConfig } from "./TableContainerConfig";
 import { get } from "lodash-es";
 import { ElementGroupType } from "../../fields/Field";
+import { RiDragDropLine } from "react-icons/ri";
 
 interface ITableContainerPorps {}
 
@@ -23,11 +24,14 @@ export const TableContainer = (
     >
       <div className="ant-table ant-table-empty">
         <div className="ant-table-container">
-          <div className="ant-table-content">
+          <div className="ant-table-content overflow-x-auto ">
             <table className="  table-auto">
-              <thead className="ant-table-thead">
-                <tr className="flex w-fit">
-                  <th className="ant-table-cell">序号</th>
+              <thead className="ant-table-thead ">
+                <tr className="flex w-fit pr-16">
+                  <th className="ant-table-cell w-[100px]  min-w-[100px]">
+                    序号
+                  </th>
+
                   {children}
                 </tr>
               </thead>
