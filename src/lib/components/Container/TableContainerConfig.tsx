@@ -4,7 +4,11 @@ import { ElementsType, FormElement } from "../../fields/Field";
 import { MdTextFields } from "react-icons/md";
 export const tableContainerType: ElementsType = "TableContainer";
 const tableContainerDefaultProps = {
-  grid: true,
+  apiMethod: "post",
+  nameFieldKey: "name",
+  idFieldKey: "id",
+  queryParams: [],
+  apiHeader: [],
 };
 
 export const TableContainerConfig: FormElement = {

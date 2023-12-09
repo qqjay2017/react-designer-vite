@@ -24,7 +24,7 @@ export const SettingsPanel = () => {
     };
   });
   return isEnabled && selected ? (
-    <div className="w-[265px] overflow-auto bg-white">
+    <div className="w-[285px] overflow-auto bg-white mb-6">
       <div data-cy="settings-panel">
         {selected.settings && React.createElement(selected.settings)}
       </div>

@@ -1,5 +1,1 @@
-import { Editor } from "./components";
-
-export const DesignerClient = () => {
-  return <Editor />;
-};
+export { DesignerClient } from "./components";

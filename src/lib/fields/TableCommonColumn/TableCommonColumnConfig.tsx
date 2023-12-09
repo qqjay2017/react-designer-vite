@@ -4,6 +4,8 @@ import { MdViewColumn } from "react-icons/md";
 export const textFieldType: ElementsType = "TableCommonColumn";
 export const textDefaultPorps = {
   title: "字段",
+  ellipsis: false,
+  copyable: false,
 };
 
 export const tableCommonColumnConfig: FormElement = {

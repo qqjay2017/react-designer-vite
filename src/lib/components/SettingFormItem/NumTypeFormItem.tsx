@@ -1,8 +1,8 @@
 import { IBaseFormItemProps } from ".";
 import { FormItem, FormLabel } from "../ui/form";
-import { Input } from "antd";
+import { Input, InputNumber } from "antd";
 
-export const StrTypeFormItem = ({
+export const NumTypeFormItem = ({
   label,
   value,
   onChange,
@@ -10,12 +10,12 @@ export const StrTypeFormItem = ({
   return (
     <FormItem>
       <FormLabel>{label}</FormLabel>
-      <Input
+      <InputNumber
         style={{
           minWidth: 100,
         }}
         value={value}
-        onChange={(e) => onChange && onChange(e.target.value)}
+        onChange={(e) => onChange && onChange(e)}
       />
     </FormItem>
   );

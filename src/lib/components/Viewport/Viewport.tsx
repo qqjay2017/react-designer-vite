@@ -4,10 +4,18 @@ import { PropsWithChildren } from "react";
 import { Toolbox } from "../Toolbox";
 import { Header } from "../Header";
 import { SettingsPanel } from "../SettingsPanel";
-import { Frame, Element } from "@craftjs/core";
-interface IViewportPorps {}
 
-export const Viewport = ({ children }: PropsWithChildren<IViewportPorps>) => {
+import { IHeaderAction } from "../Header/interface";
+interface IViewportPorps {
+  headerActions?: IHeaderAction;
+  defaultJson?: any;
+}
+
+export const Viewport = ({
+  children,
+  headerActions,
+  defaultJson,
+}: PropsWithChildren<IViewportPorps>) => {
   const {
     enabled,
     connectors,
@@ -18,7 +26,7 @@ export const Viewport = ({ children }: PropsWithChildren<IViewportPorps>) => {
 
   return (
     <div className="flex flex-col w-full h-full page-container">
-      <Header />
+      <Header headerActions={headerActions} defaultJson={defaultJson} />
       <div className=" flex flex-1  w-full h-full  bg-[#f9fafc]">
         <Toolbox />
         <div

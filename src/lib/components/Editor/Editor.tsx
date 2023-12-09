@@ -5,8 +5,13 @@ import { Container, ProFormContainer, TableContainer } from "../Container";
 
 import { RenderNode } from "../RenderNode";
 import { FormElements } from "../../fields";
+import { IHeaderAction } from "../Header/interface";
+export interface IDesignerClientProps {
+  headerActions?: IHeaderAction;
+  defaultJson?: any;
+}
 
-export const Editor = () => {
+export const DesignerClient = (props: IDesignerClientProps) => {
   return (
     <div className="innerEditorWrap relative  overflow-hidden">
       <InnerEditor
@@ -17,7 +22,10 @@ export const Editor = () => {
         // 统一的渲染处理
         onRender={RenderNode}
       >
-        <Viewport>
+        <Viewport
+          headerActions={props.headerActions}
+          defaultJson={props.defaultJson}
+        >
           <Frame>
             <Element canvas is={Container}>
               <Element canvas is={ProFormContainer}></Element>

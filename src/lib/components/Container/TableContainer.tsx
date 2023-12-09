@@ -34,7 +34,7 @@ export const TableContainer = (
               <tbody className="ant-table-tbody">
                 <tr className="ant-table-placeholder">
                   <td className="ant-table-cell">
-                    <div className="ant-empty ant-empty-normal"></div>
+                    <div className="ant-empty ant-empty-normal">表格内容</div>
                   </td>
                 </tr>
               </tbody>
