@@ -20,7 +20,7 @@ export const TableContainer = (
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className="w-full  pt-0   	 my-5 ant-table-wrapper"
+      className="w-full  pt-0   	 my-5 ant-table-wrapper   shadow-lg"
     >
       <div className="ant-table ant-table-empty">
         <div className="ant-table-container">

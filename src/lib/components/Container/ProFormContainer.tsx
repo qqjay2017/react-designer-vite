@@ -19,7 +19,7 @@ export const ProFormContainer = (
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className="w-full min-h-[300px] p-8 bg-white  shadow-sm   rounded-md	 border-border border-1 border-solid shadow-sm"
+      className="w-full min-h-[300px] p-8 bg-white     rounded-md	 border-border border-1 border-solid shadow-lg"
     >
       <ProForm
         {...props}

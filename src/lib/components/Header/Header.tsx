@@ -8,7 +8,7 @@ import { IoArrowBack } from "react-icons/io5";
 export const Header = ({
   headerActions = {},
   defaultJson,
-  headerName = "aaa",
+  headerName = "",
 }: IHeaderProps) => {
   const { enabled, canUndo, canRedo, actions, query } = useEditor(
     (state, query) => ({
@@ -25,10 +25,7 @@ export const Header = ({
   }, [actions]);
 
   return (
-    <header
-      className="h-[50px]  min-h-[50px] bg-white  flex   shadow-sm relative z-20 items-center justify-end px-9 "
-      style={{ zIndex: "9999" }}
-    >
+    <header className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative z-20 items-center justify-end px-9  z-20">
       <div className="flex-1 items-center">
         <IoArrowBack
           className="   cursor-pointer "
