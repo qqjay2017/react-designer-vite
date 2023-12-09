@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Label } from "./label";
 import { cn } from "../../utils";
-import { LabelTooltip } from "./LabelTooltip";
+import { LabelTooltip } from "./laTooltip";
 
 export const FormItem = ({
   children,

@@ -5,7 +5,7 @@ import { Container, ProFormContainer, TableContainer } from "../Container";
 
 import { RenderNode } from "../RenderNode";
 import { FormElements } from "../../fields";
-import { IHeaderAction, IHeaderProps } from "../Header/interface";
+import { IHeaderProps } from "../Header/interface";
 export interface IDesignerClientProps {
   headerProps?: IHeaderProps;
 }
