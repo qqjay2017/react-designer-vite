@@ -25,7 +25,7 @@ export const SettingsPanel = () => {
   });
   return isEnabled && selected ? (
     <div
-      className="w-[285px] overflow-auto bg-white mb-6"
+      className="w-[355px] overflow-auto bg-white mb-6"
       id="DesignerSettingsPanel"
     >
       <div data-cy="settings-panel">

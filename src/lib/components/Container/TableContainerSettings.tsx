@@ -5,7 +5,7 @@ import { Label } from "../ui/label";
 import { Button, Input, Table } from "antd";
 import { FormItem } from "../ui/form";
 import { nanoid } from "nanoid";
-
+import { IoMdMove, IoMdTrash } from "react-icons/io";
 export const TableContainerSettings = () => {
   const {
     actions: { setProp },
@@ -142,6 +142,26 @@ export const TableContainerSettings = () => {
                   );
                 },
               },
+              {
+                dataIndex: "option",
+                width: 60,
+                title: "操作",
+                render: (_, record, index) => {
+                  return (
+                    <a
+                      className=" cursor-pointer"
+                      onClick={() => {
+                        setProp(
+                          (props: any) => props.queryParams.splice(index, 1),
+                          1000
+                        );
+                      }}
+                    >
+                      删除
+                    </a>
+                  );
+                },
+              },
             ]}
           />
         ) : null}
@@ -209,6 +229,26 @@ export const TableContainerSettings = () => {
                         );
                       }}
                     />
+                  );
+                },
+              },
+              {
+                dataIndex: "option",
+                width: 60,
+                title: "操作",
+                render: (_, record, index) => {
+                  return (
+                    <a
+                      className=" cursor-pointer"
+                      onClick={() => {
+                        setProp(
+                          (props: any) => props.apiHeader.splice(index, 1),
+                          1000
+                        );
+                      }}
+                    >
+                      删除
+                    </a>
                   );
                 },
               },
