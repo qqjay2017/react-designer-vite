@@ -84,9 +84,10 @@ export const RenderNode = ({ render }: { render?: any }) => {
       .addEventListener("scroll", scroll);
 
     return () => {
-      document
-        .querySelector(".craftjs-renderer")!
-        .removeEventListener("scroll", scroll);
+      const c = document.querySelector(".craftjs-renderer");
+      if (c && c.removeEventListener) {
+        c.removeEventListener("scroll", scroll);
+      }
     };
   }, [scroll]);
   const showPortalFlag = !noShowSelect && (isHover || isActive);

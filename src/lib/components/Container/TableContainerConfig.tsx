@@ -9,6 +9,8 @@ const tableContainerDefaultProps = {
   idFieldKey: "id",
   queryParams: [],
   apiHeader: [],
+  dataPath: "rows",
+  totalPath: "total",
 };
 
 export const TableContainerConfig: FormElement = {

@@ -17,6 +17,8 @@ export const TableContainerSettings = () => {
     idFieldKey,
     queryParams = [],
     apiHeader = [],
+    dataPath,
+    totalPath,
   } = useNode((node) => ({
     layout: node.data.props.layout,
     grid: node.data.props.grid,
@@ -26,6 +28,8 @@ export const TableContainerSettings = () => {
     idFieldKey: node.data.props.idFieldKey,
     queryParams: node.data.props.queryParams,
     apiHeader: node.data.props.apiHeader,
+    dataPath: node.data.props.dataPath,
+    totalPath: node.data.props.totalPath,
   }));
   return (
     <div>
@@ -48,6 +52,16 @@ export const TableContainerSettings = () => {
           },
         ]}
         onChange={(e) => setProp((props: any) => (props.apiMethod = e), 1000)}
+      />
+      <StrTypeFormItem
+        label="rows取值路径"
+        value={dataPath}
+        onChange={(e) => setProp((props: any) => (props.dataPath = e), 1000)}
+      />
+      <StrTypeFormItem
+        label="totalPath取值路径"
+        value={totalPath}
+        onChange={(e) => setProp((props: any) => (props.totalPath = e), 1000)}
       />
       <StrTypeFormItem
         label="名称字段"
