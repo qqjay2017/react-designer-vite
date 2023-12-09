@@ -4,7 +4,7 @@ import { cn } from "../../utils";
 
 export const FormItem = ({ children }: PropsWithChildren) => {
   return (
-    <div className="space-y-0 flex items-center justify-between rounded-lg border p-3 shadow-sm my-3">
+    <div className="space-y-0 flex items-center justify-between rounded-lg border p-3 shadow-sm my-2">
       {children}
     </div>
   );

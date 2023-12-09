@@ -23,6 +23,16 @@ export const ProFormContainer = (
     >
       <ProForm
         {...props}
+        submitter={{
+          render: (props, doms) => {
+            return (
+              <div className="flex items-center justify-end  gap-2">
+                {doms[0]}
+                {doms[1]}
+              </div>
+            );
+          },
+        }}
         rowProps={{
           gutter: [16, 16],
         }}

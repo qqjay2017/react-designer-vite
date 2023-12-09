@@ -1,10 +1,10 @@
-import { ProForm } from "@ant-design/pro-components";
 import React, { PropsWithChildren } from "react";
 import { TableContainerSettings } from "./TableContainerSettings";
 import { useNode } from "@craftjs/core";
 import { TableContainerConfig } from "./TableContainerConfig";
 import { get } from "lodash-es";
 import { ElementGroupType } from "../../fields/Field";
+
 interface ITableContainerPorps {}
 
 export const TableContainer = (
@@ -19,9 +19,29 @@ export const TableContainer = (
   return (
     <div
       ref={(ref) => connect(drag(ref!))}
-      className="w-full min-h-[70px] p-8 bg-white  shadow-sm   rounded-md	 mt-5"
+      className="w-full  pt-0   	 my-5 ant-table-wrapper"
     >
-      <div className="flex items-center">{children}</div>
+      <div className="ant-table ant-table-empty">
+        <div className="ant-table-container">
+          <div className="ant-table-content">
+            <table className="  table-auto">
+              <thead className="ant-table-thead">
+                <tr className="flex w-fit">
+                  <th className="ant-table-cell">序号</th>
+                  {children}
+                </tr>
+              </thead>
+              <tbody className="ant-table-tbody">
+                <tr className="ant-table-placeholder">
+                  <td className="ant-table-cell">
+                    <div className="ant-empty ant-empty-normal"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -32,6 +52,7 @@ TableContainer.craft = {
     ...TableContainerConfig,
   },
   rules: {
+    // canMoveOut: () => false,
     canMoveIn: (incomingNode: any) => {
       const group: ElementGroupType = get(
         incomingNode,

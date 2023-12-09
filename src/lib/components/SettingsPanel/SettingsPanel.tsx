@@ -28,7 +28,7 @@ export const SettingsPanel = () => {
       <div data-cy="settings-panel">
         {selected.settings && React.createElement(selected.settings)}
       </div>
-      {selected.isDeletable ? (
+      {/* {selected.isDeletable ? (
         <Button
           type="primary"
           onClick={() => {
@@ -37,7 +37,7 @@ export const SettingsPanel = () => {
         >
           Delete
         </Button>
-      ) : null}
+      ) : null} */}
     </div>
   ) : null;
 };

@@ -40,6 +40,9 @@ export const RenderNode = ({ render }: { render?: any }) => {
   const noShowSelect = useMemo(() => {
     return name == "StartContainer" || name == "Container";
   }, [name]);
+  const noShowDelete = useMemo(() => {
+    return name == "ProFormContainer" || name == "TableContainer";
+  }, [name]);
 
   useEffect(() => {
     if (dom && !noShowSelect) {
@@ -128,7 +131,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
                   <IoMdArrowUp />
                 </RenderNodeBtn>
               )} */}
-              {deletable ? (
+              {deletable && !noShowDelete ? (
                 <RenderNodeBtn
                   className="cursor-pointer   bg-primary  text-primary-foreground mr-1"
                   onMouseDown={(e: React.MouseEvent) => {

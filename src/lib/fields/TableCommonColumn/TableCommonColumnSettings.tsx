@@ -1,27 +1,37 @@
 import { useNode } from "@craftjs/core";
 import { Radio } from "antd";
+import { SettingFormItem } from "../../components/SettingFormItem";
 
 export const TableCommonColumnSettings = () => {
   const {
     actions: { setProp },
     colSpan,
+    title,
+    dataIndex,
+    width,
   } = useNode((node) => ({
     colSpan: node.data.props.colSpan,
+    title: node.data.props.title,
+    dataIndex: node.data.props.dataIndex,
+    width: node.data.props.width,
   }));
   return (
     <div>
-      组件占比
-      <Radio.Group
-        onChange={(e) => {
-          setProp((props: any) => (props.colSpan = e.target.value), 1000);
-        }}
-        value={colSpan}
-      >
-        <Radio.Button value="6">1/4</Radio.Button>
-        <Radio.Button value="8">1/3</Radio.Button>
-        <Radio.Button value="12">1/2</Radio.Button>
-        <Radio.Button value="24">1/1</Radio.Button>
-      </Radio.Group>
+      <SettingFormItem.StrTypeFormItem
+        label="标题"
+        value={title}
+        onChange={(e) => setProp((props: any) => (props.title = e), 1000)}
+      />
+      <SettingFormItem.StrTypeFormItem
+        label="接口字段"
+        value={dataIndex}
+        onChange={(e) => setProp((props: any) => (props.dataIndex = e), 1000)}
+      />
+      <SettingFormItem.StrTypeFormItem
+        label="宽度"
+        value={dataIndex}
+        onChange={(e) => setProp((props: any) => (props.width = e), 1000)}
+      />
     </div>
   );
 };

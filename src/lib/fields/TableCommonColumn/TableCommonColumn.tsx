@@ -3,6 +3,7 @@ import React from "react";
 import { cn } from "../../utils";
 import { TableCommonColumnSettings } from "./TableCommonColumnSettings";
 import { tableCommonColumnConfig } from "./TableCommonColumnConfig";
+import { Table } from "antd";
 
 export const TableCommonColumn = (props: any) => {
   const {
@@ -15,12 +16,12 @@ export const TableCommonColumn = (props: any) => {
   }));
   const { title } = props;
   return (
-    <div
+    <th
+      className="ant-table-cell cursor-move"
       ref={(ref) => connect(drag(ref!))}
-      className={cn("cursor-move", "ant-col")}
     >
-      {title || "TableCommonColumn"}
-    </div>
+      {title || "请配置列名称"}
+    </th>
   );
 };
 

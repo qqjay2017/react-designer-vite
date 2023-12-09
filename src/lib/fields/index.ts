@@ -7,6 +7,7 @@ import {
   TableCommonColumn,
   tableCommonColumnConfig,
 } from "./TableCommonColumn";
+import { TableContainerConfig } from "../components/Container/TableContainerConfig";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -27,5 +28,5 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   TextField: textFieldFormElementConfig,
   ProFormContainer: ProFormContainerConfig,
   TableCommonColumn: tableCommonColumnConfig,
-  TableContainer: tableCommonColumnConfig,
+  TableContainer: TableContainerConfig,
 };
