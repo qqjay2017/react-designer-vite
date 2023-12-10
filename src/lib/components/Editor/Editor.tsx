@@ -9,13 +9,7 @@ import { IHeaderProps } from "../Header/interface";
 import { TextField } from "../../fields/TextField";
 import { DesignerContextProvider } from "../../context";
 import { BusHandles } from "../../context/DesignerContext";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 export interface IDesignerClientProps {
   headerProps?: IHeaderProps;
