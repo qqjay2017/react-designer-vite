@@ -6,8 +6,12 @@ import React from "react";
 
 export const TextSettings = ({
   CustomConfig,
+  AfterNameConfig,
+  InitialValueConfig,
 }: {
   CustomConfig?: React.ElementType;
+  AfterNameConfig?: React.ElementType;
+  InitialValueConfig?: React.ElementType;
 }) => {
   const {
     actions: { setProp },
@@ -47,14 +51,20 @@ export const TextSettings = ({
         value={name}
         onChange={(e: any) => setProp((props: any) => (props.name = e), 1000)}
       />
-      <SettingFormItem.StrTypeFormItem
-        label="默认内容"
-        tooltip="设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
-        value={initialValue}
-        onChange={(e: any) =>
-          setProp((props: any) => (props.initialValue = e), 1000)
-        }
-      />
+      {AfterNameConfig && <AfterNameConfig />}
+      {InitialValueConfig ? (
+        <InitialValueConfig />
+      ) : (
+        <SettingFormItem.StrTypeFormItem
+          label="默认内容"
+          tooltip="设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
+          value={initialValue}
+          onChange={(e: any) =>
+            setProp((props: any) => (props.initialValue = e), 1000)
+          }
+        />
+      )}
+
       <SettingFormItem.CheckFormItem
         label="这是个必填项"
         tooltip="选择必填后，填写者不填写将无法提交表单。"

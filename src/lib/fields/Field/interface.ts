@@ -4,6 +4,7 @@ export type ElementsType =
   | "TableCommonColumn"
   | "TextAreaField"
   | "NumberField"
+  | "DateField"
   | "TableContainer";
 
 export type ElementGroupType = "formField" | "tableColumn" | "container";
