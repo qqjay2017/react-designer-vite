@@ -13,10 +13,11 @@ type SettingFormItemKey =
   | "BoolSelectTypeFormItem";
 
 export interface IBaseFormItemProps {
-  label: string;
-  value: any;
+  label?: string;
+  value?: string | number | boolean | object;
   tooltip?: string;
   onChange: any;
+  horizontal?: boolean;
   options?: { value: any; label: any }[];
 }
 export const SettingFormItem: Record<

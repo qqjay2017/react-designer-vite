@@ -9,6 +9,7 @@ export const Toolbox = () => {
         <div className="grid grid-cols-2 my-3">
           <WidgetBtn widgetKey="TextField" />
           <WidgetBtn widgetKey="TextAreaField" />
+          <WidgetBtn widgetKey="NumberField" />
           {/* <WidgetBtn widgetKey="TextField" /> */}
         </div>
         <Label>表格控件</Label>

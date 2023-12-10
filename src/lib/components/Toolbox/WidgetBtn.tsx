@@ -14,7 +14,7 @@ export const WidgetBtn = (props: { widgetKey: ElementsType }) => {
       
       border-solid border-border  cursor-pointer 
       bg-[#F9FAFC]  rounded-sm
-       pl-2
+       pl-2 mb-3
       "
       ref={(ref) => connectors.create(ref!, <Elem />)}
     >

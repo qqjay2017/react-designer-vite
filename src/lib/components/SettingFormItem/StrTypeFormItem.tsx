@@ -7,14 +7,15 @@ export const StrTypeFormItem = ({
   value,
   onChange,
   tooltip,
+  horizontal,
 }: IBaseFormItemProps) => {
   return (
-    <FormItem label={label} tooltip={tooltip}>
+    <FormItem label={label} tooltip={tooltip} horizontal={horizontal}>
       <Input
         style={{
           minWidth: 100,
         }}
-        value={value}
+        value={value as any}
         onChange={(e) => onChange && onChange(e.target.value)}
       />
     </FormItem>

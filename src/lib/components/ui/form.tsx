@@ -22,8 +22,8 @@ export const FormItem = ({
     >
       <div
         className={cn(
-          "  flex items-center justify-center",
-          horizontal ? "mb-0" : "mb-2"
+          "  flex items-center justify-start",
+          horizontal ? "mb-0 min-w-[120px]" : "mb-2"
         )}
       >
         <Label className="  text-[14px]">{label}</Label>

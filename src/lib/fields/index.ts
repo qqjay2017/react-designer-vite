@@ -9,6 +9,8 @@ import {
 } from "./TableCommonColumn";
 import { TableContainerConfig } from "../components/Container/TableContainerConfig";
 import { TextAreaField, textAreaFieldFormElementConfig } from "./TextAreaField";
+import { numberFieldFormElementConfig } from "./NumberField/numberFieldFormElementConfig";
+import { NumberField } from "./NumberField/NumberField";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -20,6 +22,7 @@ export const FormElements: FormElementsType = {
   TableCommonColumn: TableCommonColumn,
   TableContainer: TableContainer,
   TextAreaField,
+  NumberField,
 };
 
 type FormElementConfigMapType = {
@@ -32,4 +35,5 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   TableCommonColumn: tableCommonColumnConfig,
   TableContainer: TableContainerConfig,
   TextAreaField: textAreaFieldFormElementConfig,
+  NumberField: numberFieldFormElementConfig,
 };

@@ -2,8 +2,13 @@ import { useNode } from "@craftjs/core";
 import { Radio } from "antd";
 
 import { SettingFormItem } from "../../components/SettingFormItem";
+import React from "react";
 
-export const TextSettings = () => {
+export const TextSettings = ({
+  CustomConfig,
+}: {
+  CustomConfig?: React.ElementType;
+}) => {
   const {
     actions: { setProp },
     colSpan,
@@ -22,18 +27,6 @@ export const TextSettings = () => {
   }));
   return (
     <div>
-      {/* 组件占比 */}
-      {/* <Radio.Group
-        onChange={(e) => {
-          setProp((props: any) => (props.colSpan = e.target.value), 1000);
-        }}
-        value={colSpan}
-      >
-        <Radio.Button value="6">1/4</Radio.Button>
-        <Radio.Button value="8">1/3</Radio.Button>
-        <Radio.Button value="12">1/2</Radio.Button>
-        <Radio.Button value="24">1/1</Radio.Button>
-      </Radio.Group> */}
       <SettingFormItem.StrTypeFormItem
         tooltip="标题用于告诉填写者应该在该字段中输入什么样的内容。通常是一个词语或词组，也可以是一个问题。"
         label="标题"
@@ -70,6 +63,7 @@ export const TextSettings = () => {
           setProp((props: any) => (props.required = e), 1000)
         }
       />
+      {CustomConfig && <CustomConfig />}
     </div>
   );
 };
