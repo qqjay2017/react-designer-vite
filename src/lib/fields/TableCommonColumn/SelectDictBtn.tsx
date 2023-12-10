@@ -54,7 +54,7 @@ export const SelectDictBtn = ({
           字典
         </Button>
       </DialogTrigger>
-      <DialogContent id="DictDialogContent">
+      <DialogContent id="DictDialogContent ">
         {/* <DialogHeader className="flex items-center flex-row">
           <DialogTitle className="mb-0 mr-2">选择字典</DialogTitle>
         </DialogHeader> */}

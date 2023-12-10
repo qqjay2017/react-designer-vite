@@ -6,6 +6,13 @@ export default {
   },
   theme: {
     extend: {
+      minHeight: {
+        modal: "60vh",
+      },
+      maxHeight: {
+        modal: "calc( 100vh - 200px )",
+        "modal-inner": "calc( 100vh - 278px )",
+      },
       borderWidth: {
         1: "1px",
       },
@@ -46,5 +53,6 @@ export default {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require("tailwindcss-animate")],
 };

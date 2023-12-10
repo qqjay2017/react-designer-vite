@@ -4,6 +4,7 @@ import { Button } from "antd";
 import { IHeaderProps } from "./interface";
 import { useEffect } from "react";
 import { IoArrowBack } from "react-icons/io5";
+import { ShowVanillaJSONEditorBtn } from "../jsoneditor/ShowVanillaJSONEditorBtn";
 
 export const Header = ({
   headerActions = {},
@@ -25,7 +26,7 @@ export const Header = ({
   }, [actions]);
 
   return (
-    <header className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative z-20 items-center justify-end px-9  z-20">
+    <header className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative  gap-3 items-center justify-end px-9  z-20">
       <div className="flex-1 items-center">
         <IoArrowBack
           className="   cursor-pointer "
@@ -35,6 +36,8 @@ export const Header = ({
         />
         <span className="ml-4 text-lg">{headerName}</span>
       </div>
+      <ShowVanillaJSONEditorBtn mode="export" />
+      <ShowVanillaJSONEditorBtn mode="import" />
       <Button
         type="primary"
         onClick={() => {
