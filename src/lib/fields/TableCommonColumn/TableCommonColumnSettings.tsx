@@ -19,6 +19,7 @@ export const TableCommonColumnSettings = () => {
     width,
     search,
     valueEnumArray = [],
+    initialValue,
   } = useNode((node) => ({
     colSpan: node.data.props.colSpan,
     title: node.data.props.title,
@@ -29,6 +30,7 @@ export const TableCommonColumnSettings = () => {
     copyable: node.data.props.copyable,
     search: node.data.props.search,
     valueEnumArray: node.data.props.valueEnumArray,
+    initialValue: node.data.props.initialValue,
   }));
   const { busHandles } = useDesigner();
 
@@ -133,6 +135,16 @@ export const TableCommonColumnSettings = () => {
         value={search}
         onChange={(e: any) => setProp((props: any) => (props.search = e), 1000)}
       />
+      {search ? (
+        <SettingFormItem.StrTypeFormItem
+          label="搜索默认值"
+          tooltip="设置默认指后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
+          value={initialValue}
+          onChange={(e: any) =>
+            setProp((props: any) => (props.initialValue = e), 1000)
+          }
+        />
+      ) : null}
 
       {/* 枚举配置 */}
       <div className="p-3 my-2 border">
