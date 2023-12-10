@@ -10,14 +10,14 @@ export const TextSettings = () => {
     label,
     name,
     tooltip,
-    defaultValue,
+    initialValue,
     required,
   } = useNode((node) => ({
     colSpan: node.data.props.colSpan,
     label: node.data.props.label,
     name: node.data.props.name,
     tooltip: node.data.props.tooltip,
-    defaultValue: node.data.props.defaultValue,
+    initialValue: node.data.props.initialValue,
     required: node.data.props.required,
   }));
   return (
@@ -57,9 +57,9 @@ export const TextSettings = () => {
       <SettingFormItem.StrTypeFormItem
         label="默认内容"
         tooltip="设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
-        value={defaultValue}
+        value={initialValue}
         onChange={(e: any) =>
-          setProp((props: any) => (props.defaultValue = e), 1000)
+          setProp((props: any) => (props.initialValue = e), 1000)
         }
       />
       <SettingFormItem.CheckFormItem
