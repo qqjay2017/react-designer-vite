@@ -107,14 +107,17 @@ export const RenderNode = ({ render }: { render?: any }) => {
                 top: getPos(dom).top,
               }}
             >
-              <RenderNodeBtn className="flex-1  flex items-center justify-center bg-primary  text-primary-foreground mr-1 ">
-                {elemConfig?.designerBtnElement?.icon && (
-                  <elemConfig.designerBtnElement.icon className="text-xs" />
-                )}
-                <span className="ml-1">
-                  {elemConfig?.designerBtnElement?.label || name}
-                </span>
-              </RenderNodeBtn>
+              {isActive && (
+                <RenderNodeBtn className="flex-1  flex items-center justify-center bg-primary  text-primary-foreground mr-1 ">
+                  {elemConfig?.designerBtnElement?.icon && (
+                    <elemConfig.designerBtnElement.icon className="text-xs" />
+                  )}
+                  <span className="ml-1">
+                    {elemConfig?.designerBtnElement?.label || name}
+                  </span>
+                </RenderNodeBtn>
+              )}
+
               {moveable && isActive ? (
                 <RenderNodeBtn
                   className="cursor-move  bg-primary  text-primary-foreground mr-1"

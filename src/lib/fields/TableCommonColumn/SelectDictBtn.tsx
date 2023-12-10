@@ -85,7 +85,7 @@ export const SelectDictBtn = ({
             <Table
               scroll={{
                 x: 699,
-                y: 400,
+                y: 300,
               }}
               pagination={{
                 defaultPageSize: 5,
