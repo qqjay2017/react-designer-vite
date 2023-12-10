@@ -6,6 +6,8 @@ export const textDefaultPorps = {
   title: "字段",
   ellipsis: false,
   copyable: false,
+  search: false,
+  valueEnumArray: [],
 };
 
 export const tableCommonColumnConfig: FormElement = {

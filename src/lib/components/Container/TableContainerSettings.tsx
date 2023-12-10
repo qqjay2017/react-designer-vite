@@ -37,7 +37,7 @@ export const TableContainerSettings = () => {
         tooltip="完整的接口地址"
         label="接口地址"
         value={apiUrl}
-        onChange={(e) => setProp((props: any) => (props.apiUrl = e), 1000)}
+        onChange={(e: any) => setProp((props: any) => (props.apiUrl = e), 1000)}
       />
       <SingleSelectTypeFormItem
         label="请求方式"
@@ -53,31 +53,39 @@ export const TableContainerSettings = () => {
             label: "POST",
           },
         ]}
-        onChange={(e) => setProp((props: any) => (props.apiMethod = e), 1000)}
+        onChange={(e: any) =>
+          setProp((props: any) => (props.apiMethod = e), 1000)
+        }
       />
       <StrTypeFormItem
         tooltip="json解析时,表格数组的取值path"
         label="rows取值路径"
         value={dataPath}
-        onChange={(e) => setProp((props: any) => (props.dataPath = e), 1000)}
+        onChange={(e: any) =>
+          setProp((props: any) => (props.dataPath = e), 1000)
+        }
       />
       <StrTypeFormItem
         tooltip="json解析时,表格数量的取值path"
         label="totalPath取值路径"
         value={totalPath}
-        onChange={(e) => setProp((props: any) => (props.totalPath = e), 1000)}
+        onChange={(e: any) =>
+          setProp((props: any) => (props.totalPath = e), 1000)
+        }
       />
       <StrTypeFormItem
         label="名称字段"
         value={nameFieldKey}
-        onChange={(e) =>
+        onChange={(e: any) =>
           setProp((props: any) => (props.nameFieldKey = e), 1000)
         }
       />
       <StrTypeFormItem
         label="ID字段"
         value={idFieldKey}
-        onChange={(e) => setProp((props: any) => (props.idFieldKey = e), 1000)}
+        onChange={(e: any) =>
+          setProp((props: any) => (props.idFieldKey = e), 1000)
+        }
       />
       {/* 接口参数 */}
       <div className="p-3 my-2 border ">
@@ -171,7 +179,7 @@ export const TableContainerSettings = () => {
         ) : null}
       </div>
       {/* 接口请求头 */}
-      <div className="p-3 my-2 border shadow-sm">
+      <div className="p-3 my-2 border ">
         <div className="flex items-center justify-between">
           <Label className="mb-2">Header</Label>
           <Button
