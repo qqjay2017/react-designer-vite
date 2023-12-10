@@ -11,6 +11,7 @@ import { DesignerContextProvider } from "../../context";
 import { BusHandles } from "../../context/DesignerContext";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
+import { ConfigProvider } from "antd";
 export interface IDesignerClientProps {
   headerProps?: IHeaderProps;
   busHandles?: BusHandles;
@@ -18,34 +19,40 @@ export interface IDesignerClientProps {
 
 export const DesignerClient = (props: IDesignerClientProps) => {
   return (
-    <DesignerContextProvider
-      config={{
-        busHandles: props.busHandles || {},
-      }}
+    <ConfigProvider
+      getPopupContainer={() =>
+        document.getElementById("DesignerSettingsPanel")!
+      }
     >
-      <QueryClientProvider client={queryClient}>
-        <div className="innerEditorWrap relative  overflow-hidden">
-          <InnerEditor
-            resolver={{
-              Container,
-              ...FormElements,
-            }}
-            // 统一的渲染处理
-            onRender={RenderNode}
-          >
-            <Viewport headerProps={props.headerProps}>
-              <Frame>
-                <Element canvas is={Container}>
-                  <Element canvas is={ProFormContainer}>
-                    <TextField />
+      <DesignerContextProvider
+        config={{
+          busHandles: props.busHandles || {},
+        }}
+      >
+        <QueryClientProvider client={queryClient}>
+          <div className="innerEditorWrap relative  overflow-hidden">
+            <InnerEditor
+              resolver={{
+                Container,
+                ...FormElements,
+              }}
+              // 统一的渲染处理
+              onRender={RenderNode}
+            >
+              <Viewport headerProps={props.headerProps}>
+                <Frame>
+                  <Element canvas is={Container}>
+                    <Element canvas is={ProFormContainer}>
+                      <TextField />
+                    </Element>
+                    <Element canvas is={TableContainer}></Element>
                   </Element>
-                  <Element canvas is={TableContainer}></Element>
-                </Element>
-              </Frame>
-            </Viewport>
-          </InnerEditor>
-        </div>
-      </QueryClientProvider>
-    </DesignerContextProvider>
+                </Frame>
+              </Viewport>
+            </InnerEditor>
+          </div>
+        </QueryClientProvider>
+      </DesignerContextProvider>
+    </ConfigProvider>
   );
 };
