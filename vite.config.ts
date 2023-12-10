@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-
+import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
@@ -11,18 +11,23 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
+  },
   server: {
     proxy: {
       "/api/": {
-        target: "https://test-ymsl.kxgcc.com:30195",
+        target: "http://dev-oss.kxgcc.com:30872",
         changeOrigin: true,
       },
       "/public/": {
-        target: "https://test-ymsl.kxgcc.com:30195",
+        target: "http://dev-oss.kxgcc.com:30872",
         changeOrigin: true,
       },
       "/cms-static/": {
-        target: "https://test-ymsl.kxgcc.com:30195",
+        target: "http://dev-oss.kxgcc.com:30872",
         changeOrigin: true,
       },
     },
