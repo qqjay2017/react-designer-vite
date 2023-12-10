@@ -82,6 +82,9 @@ export const RenderNode = ({ render }: { render?: any }) => {
     document
       .querySelector(".craftjs-renderer")!
       .addEventListener("scroll", scroll);
+    document
+      .querySelector(".ant-table-content")!
+      .addEventListener("scroll", scroll);
 
     return () => {
       const c = document.querySelector(".craftjs-renderer");
@@ -112,7 +115,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
                   {elemConfig?.designerBtnElement?.label || name}
                 </span>
               </RenderNodeBtn>
-              {moveable ? (
+              {moveable && isActive ? (
                 <RenderNodeBtn
                   className="cursor-move  bg-primary  text-primary-foreground mr-1"
                   ref={drag as any}
@@ -131,7 +134,7 @@ export const RenderNode = ({ render }: { render?: any }) => {
                   <IoMdArrowUp />
                 </RenderNodeBtn>
               )} */}
-              {deletable && !noShowDelete ? (
+              {deletable && isActive && !noShowDelete ? (
                 <RenderNodeBtn
                   className="cursor-pointer   bg-primary  text-primary-foreground mr-1"
                   onMouseDown={(e: React.MouseEvent) => {
