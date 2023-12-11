@@ -5,6 +5,7 @@ import { NumTypeFormItem } from "./NumTypeFormItem";
 import { BoolSelectTypeFormItem } from "./BoolSelectTypeFormItem";
 import { CheckFormItem } from "./CheckFormItem";
 import { RadioGroupButtonFormItem } from "./RadioGroupButtonFormItem";
+import { MultSelectTypeFormItem } from "./MultSelectTypeFormItem";
 
 type SettingFormItemKey =
   | "StrTypeFormItem"
@@ -12,6 +13,7 @@ type SettingFormItemKey =
   | "NumTypeFormItem"
   | "CheckFormItem"
   | "RadioGroupButtonFormItem"
+  | "MultSelectTypeFormItem"
   | "BoolSelectTypeFormItem";
 
 export interface IBaseFormItemProps {
@@ -32,4 +34,5 @@ export const SettingFormItem: Record<
   BoolSelectTypeFormItem,
   CheckFormItem,
   RadioGroupButtonFormItem,
+  MultSelectTypeFormItem,
 };

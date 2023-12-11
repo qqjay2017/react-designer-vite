@@ -1,17 +1,21 @@
-import { IBaseFormItemProps } from ".";
+import React from "react";
 import { FormItem } from "../ui/form";
-import { InputNumber } from "antd";
+import { Select } from "antd";
+import { IBaseFormItemProps } from ".";
 
-export const NumTypeFormItem = ({
+export const MultSelectTypeFormItem = ({
   label,
   value,
   onChange,
   tooltip,
   horizontal,
+  options = [],
 }: IBaseFormItemProps) => {
   return (
     <FormItem label={label} tooltip={tooltip} horizontal={horizontal}>
-      <InputNumber
+      <Select
+        options={options}
+        mode="multiple"
         style={{
           width: "100%",
         }}

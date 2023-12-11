@@ -8,6 +8,7 @@ export type ElementsType =
   | "DateRangeField"
   | "RadioGroupField"
   | "SingleSelectField"
+  | "MultSelectField"
   | "TableContainer";
 
 export type ElementGroupType = "formField" | "tableColumn" | "container";
