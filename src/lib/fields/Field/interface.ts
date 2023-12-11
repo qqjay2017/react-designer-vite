@@ -5,6 +5,8 @@ export type ElementsType =
   | "TextAreaField"
   | "NumberField"
   | "DateField"
+  | "DateRangeField"
+  | "RadioGroupField"
   | "TableContainer";
 
 export type ElementGroupType = "formField" | "tableColumn" | "container";

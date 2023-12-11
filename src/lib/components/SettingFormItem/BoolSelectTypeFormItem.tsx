@@ -14,7 +14,7 @@ export const BoolSelectTypeFormItem = ({
     <FormItem label={label} tooltip={tooltip} horizontal>
       <Switch
         style={{}}
-        checked={value}
+        checked={value as any}
         onChange={(e: any) => {
           console.log(e, "e");
           onChange && onChange(e);

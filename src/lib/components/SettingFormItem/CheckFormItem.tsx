@@ -20,7 +20,7 @@ export const CheckFormItem = ({
     >
       <div className=" mb-2 flex items-center justify-center">
         <Checkbox
-          checked={value}
+          checked={value as any}
           onChange={(e) => {
             onChange && onChange(e.target.checked);
           }}

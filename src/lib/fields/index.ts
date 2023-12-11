@@ -12,6 +12,14 @@ import { TextAreaField, textAreaFieldFormElementConfig } from "./TextAreaField";
 import { numberFieldFormElementConfig } from "./NumberField/numberFieldFormElementConfig";
 import { NumberField } from "./NumberField/NumberField";
 import { DateField, dateFieldFormElementConfig } from "./DateField";
+import {
+  DateRangeField,
+  dateRangeFieldFormElementConfig,
+} from "./DateRangeField";
+import {
+  RadioGroupField,
+  radioGroupFieldFormElementConfig,
+} from "./RadioGroupField";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -25,6 +33,8 @@ export const FormElements: FormElementsType = {
   TextAreaField,
   NumberField,
   DateField,
+  DateRangeField,
+  RadioGroupField,
 };
 
 type FormElementConfigMapType = {
@@ -39,4 +49,6 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   TextAreaField: textAreaFieldFormElementConfig,
   NumberField: numberFieldFormElementConfig,
   DateField: dateFieldFormElementConfig,
+  DateRangeField: dateRangeFieldFormElementConfig,
+  RadioGroupField: radioGroupFieldFormElementConfig,
 };

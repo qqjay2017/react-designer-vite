@@ -1,17 +1,20 @@
 import { useNode } from "@craftjs/core";
-import { Radio } from "antd";
 
 import { SettingFormItem } from "../../components/SettingFormItem";
 import React from "react";
+import { initialValueCommonConfig } from "../Field/initialValueConfig";
+import { DictConfigSetting } from "../TableCommonColumn/DictConfigSetting";
 
 export const TextSettings = ({
   CustomConfig,
   AfterNameConfig,
   InitialValueConfig,
+  showDictConfigSetting = false,
 }: {
   CustomConfig?: React.ElementType;
   AfterNameConfig?: React.ElementType;
   InitialValueConfig?: React.ElementType;
+  showDictConfigSetting?: boolean;
 }) => {
   const {
     actions: { setProp },
@@ -47,17 +50,26 @@ export const TextSettings = ({
       />
       <SettingFormItem.StrTypeFormItem
         label="字段"
-        tooltip="于接口字段进行绑定。"
+        tooltip="与接口字段进行绑定。"
         value={name}
         onChange={(e: any) => setProp((props: any) => (props.name = e), 1000)}
       />
+
+      {/* 枚举配置 */}
+      {showDictConfigSetting && (
+        <DictConfigSetting
+          optionsKey="options"
+          labelKey="label"
+          valueKey="value"
+        />
+      )}
       {AfterNameConfig && <AfterNameConfig />}
+
       {InitialValueConfig ? (
         <InitialValueConfig />
       ) : (
         <SettingFormItem.StrTypeFormItem
-          label="默认内容"
-          tooltip="设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
+          {...initialValueCommonConfig}
           value={initialValue}
           onChange={(e: any) =>
             setProp((props: any) => (props.initialValue = e), 1000)

@@ -8,6 +8,7 @@ import {
 import { Button, message } from "antd";
 import VanillaJSONEditor from "./VanillaJSONEditor";
 import { useEditor } from "@craftjs/core";
+import { ScrollArea } from "../ui/scroll-area";
 
 export const ShowVanillaJSONEditorBtn = ({
   mode = "import",
@@ -48,19 +49,25 @@ export const ShowVanillaJSONEditorBtn = ({
           {mode == "export" ? "导出" : "导入"}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-modal     overflow-hidden">
-        <div className="overflow-y-auto max-h-modal-inner">
-          {open && (
-            <VanillaJSONEditor
-              content={content}
-              readOnly={mode === "export"}
-              onChange={setContent}
-            />
-          )}
-        </div>
+      <DialogContent id="DictDialogContent">
+        <ScrollArea
+          style={{
+            height: "calc( 100vh - 260px)",
+          }}
+        >
+          <div className="overflow-y-auto max-h-modal-inner">
+            {open && (
+              <VanillaJSONEditor
+                content={content}
+                readOnly={mode === "export"}
+                onChange={setContent}
+              />
+            )}
+          </div>
+        </ScrollArea>
 
         {mode == "import" && (
-          <DialogFooter className="h-[48px]">
+          <DialogFooter className="h-[38px]">
             <Button
               type="primary"
               onClick={() => {

@@ -6,9 +6,6 @@ export default {
   },
   theme: {
     extend: {
-      minHeight: {
-        modal: "60vh",
-      },
       maxHeight: {
         modal: "calc( 100vh - 200px )",
         "modal-inner": "calc( 100vh - 278px )",

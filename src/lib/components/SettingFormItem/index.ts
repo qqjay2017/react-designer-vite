@@ -4,12 +4,14 @@ import { SingleSelectTypeFormItem } from "./SingleSelectTypeFormItem";
 import { NumTypeFormItem } from "./NumTypeFormItem";
 import { BoolSelectTypeFormItem } from "./BoolSelectTypeFormItem";
 import { CheckFormItem } from "./CheckFormItem";
+import { RadioGroupButtonFormItem } from "./RadioGroupButtonFormItem";
 
 type SettingFormItemKey =
   | "StrTypeFormItem"
   | "SingleSelectTypeFormItem"
   | "NumTypeFormItem"
   | "CheckFormItem"
+  | "RadioGroupButtonFormItem"
   | "BoolSelectTypeFormItem";
 
 export interface IBaseFormItemProps {
@@ -29,4 +31,5 @@ export const SettingFormItem: Record<
   NumTypeFormItem: NumTypeFormItem,
   BoolSelectTypeFormItem,
   CheckFormItem,
+  RadioGroupButtonFormItem,
 };

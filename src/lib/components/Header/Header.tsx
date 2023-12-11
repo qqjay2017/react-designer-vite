@@ -26,7 +26,7 @@ export const Header = ({
   }, [actions]);
 
   return (
-    <header className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative  gap-3 items-center justify-end px-9  z-20">
+    <header className="h-[50px]  min-h-[50px] bg-white  flex    shadow-md relative  gap-3 items-center justify-end px-9  z-30">
       <div className="flex-1 items-center">
         <IoArrowBack
           className="   cursor-pointer "

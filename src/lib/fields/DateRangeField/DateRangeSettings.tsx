@@ -3,12 +3,12 @@ import { SettingFormItem } from "@/lib/components/SettingFormItem";
 import { useNode } from "@craftjs/core";
 import { FormItem } from "@/lib/components/ui/form";
 import { DatePicker } from "antd";
-import { formatTypeOptions } from "./formatTypeEnum";
-import { getDatePickerCommonProps } from "./getDatePickerCommonProps";
+import { formatTypeOptions } from "../DateField/formatTypeEnum";
 import { initialValueCommonConfig } from "../Field/initialValueConfig";
+import { getDatePickerCommonProps } from "../DateField/getDatePickerCommonProps";
 
 // fieldProps={{ precision: 0 }}
-export const DateSettings = () => {
+export const DateRangeSettings = () => {
   const {
     actions: { setProp },
     formatType,
@@ -25,7 +25,7 @@ export const DateSettings = () => {
     return (
       <>
         <FormItem {...initialValueCommonConfig} horizontal={false}>
-          <DatePicker
+          <DatePicker.RangePicker
             {...datePickerCommonProps}
             value={initialValue}
             onChange={(e) => {

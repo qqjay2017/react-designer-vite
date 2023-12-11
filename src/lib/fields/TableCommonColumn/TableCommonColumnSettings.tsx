@@ -7,6 +7,7 @@ import { nanoid } from "nanoid";
 import { Label } from "../../components/ui/label";
 import { SelectDictBtn } from "./SelectDictBtn";
 import { useDesigner } from "@/lib/hooks";
+import { DictConfigSetting } from "./DictConfigSetting";
 
 export const TableCommonColumnSettings = () => {
   const {
@@ -147,145 +148,7 @@ export const TableCommonColumnSettings = () => {
       ) : null}
 
       {/* 枚举配置 */}
-      <div className="p-3 my-2 border">
-        <div className="flex items-center justify-between">
-          <Label className="mb-2 flex-1">枚举键值对</Label>
-          {busHandles?.getDictTypes && busHandles?.dictQueryCode ? (
-            <SelectDictBtn
-              getDictTypes={busHandles.getDictTypes}
-              dictQueryCode={busHandles.dictQueryCode}
-              setProp={setProp}
-            />
-          ) : null}
-
-          <Button
-            className="mb-2"
-            type="link"
-            size="small"
-            onClick={() => {
-              setProp(
-                (props: any) =>
-                  props.valueEnumArray.push({
-                    id: nanoid(),
-                    key: "key_" + nanoid(3),
-                    value: "value_" + nanoid(3),
-                  }),
-                1000
-              );
-            }}
-          >
-            新增
-          </Button>
-        </div>
-        {valueEnumArray && valueEnumArray.length ? (
-          <Table
-            rowKey={"id"}
-            pagination={false}
-            size="small"
-            dataSource={valueEnumArray}
-            columns={[
-              {
-                dataIndex: "key",
-                title: "key",
-                render: (_, record, index) => {
-                  return (
-                    <Input
-                      value={record.key}
-                      onChange={(e) => {
-                        setProp(
-                          (props: any) =>
-                            (props.valueEnumArray[index]["key"] =
-                              e.target.value),
-                          1000
-                        );
-                      }}
-                    />
-                  );
-                },
-              },
-              {
-                dataIndex: "value",
-                title: "value",
-                render: (_, record, index) => {
-                  return (
-                    <Input
-                      value={record.value}
-                      onChange={(e) => {
-                        setProp(
-                          (props: any) =>
-                            (props.valueEnumArray[index]["value"] =
-                              e.target.value),
-                          1000
-                        );
-                      }}
-                    />
-                  );
-                },
-              },
-              // {
-              //   dataIndex: "status",
-              //   title: "状态",
-              //   render: (_, record, index) => {
-              //     return (
-              //       <Select
-              //         value={record.status}
-              //         options={[
-              //           {
-              //             label: "success",
-              //             value: "Success",
-              //           },
-              //           {
-              //             label: "error",
-              //             value: "Error",
-              //           },
-              //           {
-              //             label: "processing",
-              //             value: "Processing",
-              //           },
-              //           {
-              //             label: "warning",
-              //             value: "Warning",
-              //           },
-              //           {
-              //             label: "default",
-              //             value: "Default",
-              //           },
-              //         ]}
-              //         onChange={(e) => {
-              //           setProp(
-              //             (props: any) =>
-              //               (props.valueEnumArray[index]["status"] = e),
-              //             1000
-              //           );
-              //         }}
-              //       />
-              //     );
-              //   },
-              // },
-              {
-                dataIndex: "option",
-                width: 55,
-                title: "操作",
-                render: (_, record, index) => {
-                  return (
-                    <a
-                      className=" cursor-pointer"
-                      onClick={() => {
-                        setProp(
-                          (props: any) => props.valueEnumArray.splice(index, 1),
-                          1000
-                        );
-                      }}
-                    >
-                      删除
-                    </a>
-                  );
-                },
-              },
-            ]}
-          />
-        ) : null}
-      </div>
+      <DictConfigSetting optionsKey="valueEnumArray" />
     </div>
   );
 };
