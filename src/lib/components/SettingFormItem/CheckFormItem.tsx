@@ -10,6 +10,7 @@ export const CheckFormItem = ({
   value,
   onChange,
   tooltip,
+  ...rest
 }: IBaseFormItemProps) => {
   return (
     <div
@@ -20,6 +21,7 @@ export const CheckFormItem = ({
     >
       <div className=" mb-2 flex items-center justify-center">
         <Checkbox
+          {...rest}
           checked={value as any}
           onChange={(e) => {
             onChange && onChange(e.target.checked);

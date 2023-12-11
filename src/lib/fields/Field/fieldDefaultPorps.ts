@@ -1,3 +1,3 @@
 export const fieldDefaultPorps = {
-  colSpan: "12",
+  colSpan: 12,
 };

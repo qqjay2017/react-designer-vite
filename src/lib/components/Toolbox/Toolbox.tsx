@@ -15,6 +15,7 @@ export const Toolbox = () => {
           <WidgetBtn widgetKey="RadioGroupField" />
           <WidgetBtn widgetKey="SingleSelectField" />
           <WidgetBtn widgetKey="MultSelectField" />
+          <WidgetBtn widgetKey="FileUploadField" />
           {/* <WidgetBtn widgetKey="TextField" /> */}
         </div>
         <Label>表格控件</Label>

@@ -9,10 +9,12 @@ export const BoolSelectTypeFormItem = ({
   value,
   onChange,
   tooltip,
+  ...rest
 }: ISingleSelectTypeFormItemProps) => {
   return (
     <FormItem label={label} tooltip={tooltip} horizontal>
       <Switch
+        {...rest}
         style={{}}
         checked={value as any}
         onChange={(e: any) => {

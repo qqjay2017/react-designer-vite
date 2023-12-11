@@ -14,6 +14,10 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
+      "~react-image-gallery/styles/css/image-gallery.css": resolve(
+        __dirname,
+        "./src/assets/image-gallery.css"
+      ),
     },
   },
   server: {

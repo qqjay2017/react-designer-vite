@@ -9,6 +9,7 @@ export type ElementsType =
   | "RadioGroupField"
   | "SingleSelectField"
   | "MultSelectField"
+  | "FileUploadField"
   | "TableContainer";
 
 export type ElementGroupType = "formField" | "tableColumn" | "container";

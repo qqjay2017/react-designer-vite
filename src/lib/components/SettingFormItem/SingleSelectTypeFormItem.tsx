@@ -10,10 +10,12 @@ export const SingleSelectTypeFormItem = ({
   onChange,
   options = [],
   tooltip,
+  ...rest
 }: ISingleSelectTypeFormItemProps) => {
   return (
     <FormItem label={label} tooltip={tooltip}>
       <Select
+        {...rest}
         getPopupContainer={() =>
           document.getElementById("DesignerSettingsPanel")!
         }

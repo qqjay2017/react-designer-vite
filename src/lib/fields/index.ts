@@ -28,6 +28,10 @@ import {
   MultSelectField,
   multSelectFieldFormElementConfig,
 } from "./MultSelectField";
+import {
+  fileUploadFieldFormElementConfig,
+  FileUploadField,
+} from "./FileUploadField";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -45,6 +49,7 @@ export const FormElements: FormElementsType = {
   RadioGroupField,
   SingleSelectField,
   MultSelectField,
+  FileUploadField,
 };
 
 type FormElementConfigMapType = {
@@ -63,4 +68,5 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   RadioGroupField: radioGroupFieldFormElementConfig,
   SingleSelectField: singleSelectFieldFormElementConfig,
   MultSelectField: multSelectFieldFormElementConfig,
+  FileUploadField: fileUploadFieldFormElementConfig,
 };

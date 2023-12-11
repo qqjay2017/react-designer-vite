@@ -10,10 +10,12 @@ export const MultSelectTypeFormItem = ({
   tooltip,
   horizontal,
   options = [],
+  ...rest
 }: IBaseFormItemProps) => {
   return (
     <FormItem label={label} tooltip={tooltip} horizontal={horizontal}>
       <Select
+        {...rest}
         options={options}
         mode="multiple"
         style={{

@@ -18,7 +18,7 @@ export const TextSettings = ({
 }) => {
   const {
     actions: { setProp },
-    colSpan,
+    colSpan = 12,
     label,
     name,
     tooltip,
@@ -76,6 +76,33 @@ export const TextSettings = ({
           }
         />
       )}
+
+      <SettingFormItem.RadioGroupButtonFormItem
+        label="字段占比"
+        tooltip="配置表单布局，可以单行多字段排布"
+        value={colSpan}
+        onChange={(e: any) =>
+          setProp((props: any) => (props.colSpan = e), 1000)
+        }
+        options={[
+          {
+            label: "25",
+            value: 6,
+          },
+          {
+            label: "50",
+            value: 12,
+          },
+          {
+            label: "75",
+            value: 18,
+          },
+          {
+            label: "100",
+            value: 24,
+          },
+        ]}
+      />
 
       <SettingFormItem.CheckFormItem
         label="这是个必填项"

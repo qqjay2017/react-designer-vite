@@ -11,14 +11,18 @@ export const RadioGroupButtonFormItem = ({
   tooltip,
   options = [],
   horizontal = false,
+  ...rest
 }: IBaseFormItemProps) => {
   return (
     <FormItem label={label} tooltip={tooltip} horizontal={horizontal}>
       <Radio.Group
+        {...rest}
         onChange={(e) => {
           onChange && onChange(e.target.value);
         }}
         value={value}
+        optionType="button"
+        buttonStyle="solid"
       >
         {options.map((option, index) => (
           <Radio.Button value={option.value} key={option.value}>
