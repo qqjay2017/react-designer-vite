@@ -14,7 +14,11 @@ export const WidgetBtn = (props: { widgetKey: ElementsType }) => {
       
       border-solid border-border  cursor-pointer 
       bg-[#F9FAFC]  rounded-sm
-       pl-2 mb-3
+      text-[#494f57]
+       pl-2 mb-3  hover:text-black
+       hover:border-[#ccd4e0]
+       hover:bg-[#f4f6f9]
+       hover:font-semibold
       "
       ref={(ref) => connectors.create(ref!, <Elem />)}
     >

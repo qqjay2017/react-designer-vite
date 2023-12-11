@@ -13,6 +13,7 @@ export const Toolbox = () => {
           <WidgetBtn widgetKey="DateField" />
           <WidgetBtn widgetKey="DateRangeField" />
           <WidgetBtn widgetKey="RadioGroupField" />
+          <WidgetBtn widgetKey="SingleSelectField" />
           {/* <WidgetBtn widgetKey="TextField" /> */}
         </div>
         <Label>表格控件</Label>

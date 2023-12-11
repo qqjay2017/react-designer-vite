@@ -20,6 +20,8 @@ import {
   RadioGroupField,
   radioGroupFieldFormElementConfig,
 } from "./RadioGroupField";
+import { singleSelectFieldFormElementConfig } from "./SingleSelectField/singleSelectFieldFormElementConfig";
+import { SingleSelectField } from "./SingleSelectField/SingleSelectField";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -35,6 +37,7 @@ export const FormElements: FormElementsType = {
   DateField,
   DateRangeField,
   RadioGroupField,
+  SingleSelectField,
 };
 
 type FormElementConfigMapType = {
@@ -51,4 +54,5 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   DateField: dateFieldFormElementConfig,
   DateRangeField: dateRangeFieldFormElementConfig,
   RadioGroupField: radioGroupFieldFormElementConfig,
+  SingleSelectField: singleSelectFieldFormElementConfig,
 };

@@ -15,6 +15,7 @@ import { ConfigProvider } from "antd";
 export interface IDesignerClientProps {
   headerProps?: IHeaderProps;
   busHandles?: BusHandles;
+  templateType?: string;
 }
 
 export const DesignerClient = (props: IDesignerClientProps) => {
@@ -26,6 +27,7 @@ export const DesignerClient = (props: IDesignerClientProps) => {
     >
       <DesignerContextProvider
         config={{
+          templateType: props.templateType || "RelationData",
           busHandles: props.busHandles || {},
         }}
       >

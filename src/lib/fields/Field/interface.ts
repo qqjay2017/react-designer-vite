@@ -7,6 +7,7 @@ export type ElementsType =
   | "DateField"
   | "DateRangeField"
   | "RadioGroupField"
+  | "SingleSelectField"
   | "TableContainer";
 
 export type ElementGroupType = "formField" | "tableColumn" | "container";

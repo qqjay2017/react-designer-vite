@@ -1,4 +1,3 @@
-import React from "react";
 import { TextSettings } from "../TextField/TextSettings";
 import { SettingFormItem } from "@/lib/components/SettingFormItem";
 import { useNode } from "@craftjs/core";
