@@ -17,7 +17,8 @@ export const TextAreaField = (props: any) => {
 TextAreaField.craft = {
   ...textFieldFormElementConfig,
   custom: {
-    ...textFieldFormElementConfig,
+    group: textFieldFormElementConfig.group,
+    designerBtnElement: textFieldFormElementConfig.designerBtnElement,
   },
   related: {
     settings: TextSettings,

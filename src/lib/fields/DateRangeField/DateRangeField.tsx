@@ -34,7 +34,8 @@ export const DateRangeField = (props: any) => {
 DateRangeField.craft = {
   ...dateRangeFieldFormElementConfig,
   custom: {
-    ...dateRangeFieldFormElementConfig,
+    group: dateRangeFieldFormElementConfig.group,
+    designerBtnElement: dateRangeFieldFormElementConfig.designerBtnElement,
   },
 
   related: {

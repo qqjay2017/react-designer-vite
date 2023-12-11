@@ -46,7 +46,8 @@ export const ProFormContainer = (
 ProFormContainer.craft = {
   ...ProFormContainerConfig,
   custom: {
-    ...ProFormContainerConfig,
+    group: ProFormContainerConfig.group,
+    designerBtnElement: ProFormContainerConfig.designerBtnElement,
   },
   rules: {
     canMoveIn: (incomingNode: any) => {

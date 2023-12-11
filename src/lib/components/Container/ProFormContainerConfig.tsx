@@ -10,6 +10,11 @@ const proFormContainerDefaultProps = {
 export const ProFormContainerConfig: FormElement = {
   displayName: proFormContainerType,
   group: "container",
+  designerBtnElement: {
+    icon: MdTextFields,
+    label: "表单容器",
+    description: "表单容器，用于创建一个实体或收集信息。",
+  },
   construct: (id: string) => ({
     id,
     type: proFormContainerType,
@@ -19,10 +24,5 @@ export const ProFormContainerConfig: FormElement = {
   }),
   props: {
     ...proFormContainerDefaultProps,
-  },
-  designerBtnElement: {
-    icon: MdTextFields,
-    label: "表单容器",
-    description: "表单容器，用于创建一个实体或收集信息。",
   },
 };

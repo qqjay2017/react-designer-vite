@@ -30,7 +30,8 @@ export const RadioGroupField = (props: any) => {
 RadioGroupField.craft = {
   ...radioGroupFieldFormElementConfig,
   custom: {
-    ...radioGroupFieldFormElementConfig,
+    group: radioGroupFieldFormElementConfig.group,
+    designerBtnElement: radioGroupFieldFormElementConfig.designerBtnElement,
   },
 
   related: {

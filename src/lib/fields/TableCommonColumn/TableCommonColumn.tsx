@@ -32,7 +32,8 @@ export const TableCommonColumn = (props: any) => {
 TableCommonColumn.craft = {
   ...tableCommonColumnConfig,
   custom: {
-    ...tableCommonColumnConfig,
+    group: tableCommonColumnConfig.group,
+    designerBtnElement: tableCommonColumnConfig.designerBtnElement,
   },
 
   related: {

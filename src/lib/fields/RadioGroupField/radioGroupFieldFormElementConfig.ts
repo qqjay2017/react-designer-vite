@@ -4,7 +4,7 @@ import { IoMdRadioButtonOn } from "react-icons/io";
 export const radioGroupFieldType: ElementsType = "RadioGroupField";
 export const radioGroupDefaultPorps = {
   ...fieldDefaultPorps,
-  label: "单选选择",
+  label: "单项选择",
   initialValue: null,
   radioType: "default",
 };
@@ -24,7 +24,7 @@ export const radioGroupFieldFormElementConfig: FormElement = {
   },
   designerBtnElement: {
     icon: IoMdRadioButtonOn,
-    label: "单选选择",
+    label: "单项选择",
     description: "选择组件，可以自定义编辑和增删选项，填写者需要进行单项选择。",
   },
 };

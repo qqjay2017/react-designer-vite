@@ -53,7 +53,8 @@ export const TableContainer = (
 TableContainer.craft = {
   ...TableContainerConfig,
   custom: {
-    ...TableContainerConfig,
+    group: TableContainerConfig.group,
+    designerBtnElement: TableContainerConfig.designerBtnElement,
   },
   rules: {
     // canMoveOut: () => false,

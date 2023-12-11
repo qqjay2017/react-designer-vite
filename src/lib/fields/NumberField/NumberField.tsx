@@ -42,7 +42,8 @@ export const NumberField = (props: any) => {
 NumberField.craft = {
   ...numberFieldFormElementConfig,
   custom: {
-    ...numberFieldFormElementConfig,
+    group: numberFieldFormElementConfig.group,
+    designerBtnElement: numberFieldFormElementConfig.designerBtnElement,
   },
 
   related: {
