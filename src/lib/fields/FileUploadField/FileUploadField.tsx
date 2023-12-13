@@ -1,5 +1,5 @@
 import { FieldWrap, pickFieldProps } from "../Field";
-import CsmFileUpload from "@core/rc-components/es/CsmFileUpload";
+import { CsmFileUpload } from "@core/rc-components";
 import { fileUploadFieldFormElementConfig } from "./fileUploadFieldFormElementConfig";
 import { FileUploadSelectSettings } from "./FileUploadSelectSettings";
 import { ProFormItem } from "@ant-design/pro-components";
