@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@ant-design/pro-components": "2.3.51",
-    "@core/rc-components": "^22.0.150",
     "@craftjs/core": "^0.2.3",
     "@faker-js/faker": "^8.3.1",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -44,9 +43,11 @@
   "peerDependencies": {
     "antd": ">=4.0.0",
     "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "react-dom": ">=18.0.0",
+    "@core/rc-components": ">22.0.0"
   },
   "devDependencies": {
+    "@core/rc-components": "^22.0.150",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.32",
     "@types/react-dom": "^18.2.14",
