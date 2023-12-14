@@ -1,12 +1,12 @@
-import { Frame, Editor as InnerEditor, Element } from "@craftjs/core";
+import { Frame, Editor as InnerEditor } from "@craftjs/core";
 
 import { Viewport } from "../Viewport";
-import { Container, ProFormContainer, TableContainer } from "../Container";
+import { Container } from "../Container";
 
 import { RenderNode } from "../RenderNode";
 import { FormElements } from "../../fields";
 import { IHeaderProps } from "../Header/interface";
-import { TextField } from "../../fields/TextField";
+
 import { DesignerContextProvider } from "../../context";
 import { BusHandles } from "../../context/DesignerContext";
 import { QueryClientProvider } from "@tanstack/react-query";
