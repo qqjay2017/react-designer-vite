@@ -2,14 +2,19 @@ import lz from "lzutf8";
 import { get } from "lodash-es";
 import { parseHeaderArr2Obj } from "./base";
 
-export const relationDataContentParse = (content?: string, userObj = {}) => {
+export const relationDataContentParse = (
+  content?: string,
+  userObj = {},
+  treeObj = {}
+) => {
   if (!content) {
     return {};
   }
   const jsonStr = lz.decompress(lz.decodeBase64(content));
   const config = JSON.parse(jsonStr);
-  const searchContainerId = get(config, "ROOT.nodes[0]", "");
-  const tableContainerId = get(config, "ROOT.nodes[1]", "");
+  const treeContainerId = "TreeContainer";
+  const searchContainerId = "ProFormContainer";
+  const tableContainerId = "TableContainer";
   const tableContainerConfig = get(config, `${tableContainerId}.props`, {});
   if (!tableContainerId || !searchContainerId) {
     throw new Error("未找到表格配置!");
@@ -139,7 +144,9 @@ export const relationDataContentParse = (content?: string, userObj = {}) => {
         {
           ...userObj,
         },
-        {}
+        {
+          ...treeObj,
+        }
       ),
     },
 
@@ -148,7 +155,9 @@ export const relationDataContentParse = (content?: string, userObj = {}) => {
       {
         ...userObj,
       },
-      {}
+      {
+        ...treeObj,
+      }
     ),
   };
   const tableProps = {
@@ -159,5 +168,8 @@ export const relationDataContentParse = (content?: string, userObj = {}) => {
     apiConfig,
     searchColumns,
     columns,
+    treeContainerId,
+    searchContainerId,
+    tableContainerId,
   };
 };

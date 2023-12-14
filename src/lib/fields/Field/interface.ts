@@ -7,6 +7,7 @@ export type ElementsType =
   | "DateField"
   | "DateRangeField"
   | "RadioGroupField"
+  | "TreeContainer"
   | "SingleSelectField"
   | "MultSelectField"
   | "FileUploadField"

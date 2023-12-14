@@ -50,6 +50,7 @@ ProFormContainer.craft = {
     designerBtnElement: ProFormContainerConfig.designerBtnElement,
   },
   rules: {
+    canDrag: () => false,
     canMoveIn: (incomingNode: any) => {
       const group: ElementGroupType = get(
         incomingNode,

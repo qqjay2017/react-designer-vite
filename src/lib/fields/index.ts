@@ -32,6 +32,10 @@ import {
   fileUploadFieldFormElementConfig,
   FileUploadField,
 } from "./FileUploadField";
+import {
+  TreeContainer,
+  TreeContainerConfig,
+} from "../components/Container/treeContainer";
 
 type FormElementsType = {
   [key in ElementsType]: React.ElementType;
@@ -50,6 +54,7 @@ export const FormElements: FormElementsType = {
   SingleSelectField,
   MultSelectField,
   FileUploadField,
+  TreeContainer,
 };
 
 type FormElementConfigMapType = {
@@ -69,4 +74,5 @@ export const FormElementConfigMap: FormElementConfigMapType = {
   SingleSelectField: singleSelectFieldFormElementConfig,
   MultSelectField: multSelectFieldFormElementConfig,
   FileUploadField: fileUploadFieldFormElementConfig,
+  TreeContainer: TreeContainerConfig,
 };

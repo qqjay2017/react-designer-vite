@@ -1,9 +1,11 @@
+import { cn } from "@/lib/utils";
 import { useNode } from "@craftjs/core";
 
 export const Container = ({
   background,
   padding = 20,
   children,
+  className,
   ...props
 }: any) => {
   const {
@@ -13,8 +15,11 @@ export const Container = ({
     <div
       {...props}
       ref={(ref) => connect(drag(ref!))}
-      style={{ margin: "5px 0", background, padding: `${padding}px` }}
-      className="min-h-[86px] flex flex-col w-full h-full"
+      style={{ margin: "5px 0", background }}
+      className={cn(
+        "min-h-[86px]  flex flex-col w-full h-full relative",
+        className
+      )}
     >
       {children}
     </div>

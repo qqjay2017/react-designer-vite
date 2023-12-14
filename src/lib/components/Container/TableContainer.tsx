@@ -1,10 +1,9 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { TableContainerSettings } from "./TableContainerSettings";
 import { useNode } from "@craftjs/core";
 import { TableContainerConfig } from "./TableContainerConfig";
 import { get } from "lodash-es";
 import { ElementGroupType } from "../../fields/Field";
-import { RiDragDropLine } from "react-icons/ri";
 
 interface ITableContainerPorps {}
 
@@ -57,6 +56,7 @@ TableContainer.craft = {
     designerBtnElement: TableContainerConfig.designerBtnElement,
   },
   rules: {
+    canDrag: () => false,
     // canMoveOut: () => false,
     canMoveIn: (incomingNode: any) => {
       const group: ElementGroupType = get(

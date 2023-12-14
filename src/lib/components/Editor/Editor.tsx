@@ -12,10 +12,13 @@ import { BusHandles } from "../../context/DesignerContext";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { ConfigProvider } from "antd";
+
+import { TemplateType } from "./interface";
+import { defaultJson } from "@/lib/defaultJson";
 export interface IDesignerClientProps {
   headerProps?: IHeaderProps;
   busHandles?: BusHandles;
-  templateType?: "RelationData";
+  templateType?: TemplateType;
 }
 
 export const DesignerClient = (props: IDesignerClientProps) => {
@@ -42,14 +45,11 @@ export const DesignerClient = (props: IDesignerClientProps) => {
               onRender={RenderNode}
             >
               <Viewport headerProps={props.headerProps}>
-                <Frame>
-                  <Element canvas is={Container}>
-                    <Element canvas is={ProFormContainer}>
-                      <TextField />
-                    </Element>
-                    <Element canvas is={TableContainer}></Element>
-                  </Element>
-                </Frame>
+                <Frame
+                  json={JSON.stringify(
+                    defaultJson[props.templateType || "RelationData"]
+                  )}
+                ></Frame>
               </Viewport>
             </InnerEditor>
           </div>

@@ -2,8 +2,6 @@ import { useNode } from "@craftjs/core";
 import { Button, Input, Select, Table } from "antd";
 import { SettingFormItem } from "@/lib/components/SettingFormItem";
 
-import { nanoid } from "nanoid";
-
 import { Label } from "../../components/ui/label";
 import { SelectDictBtn } from "./SelectDictBtn";
 import { useDesigner } from "@/lib/hooks";

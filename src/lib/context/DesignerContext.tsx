@@ -1,9 +1,10 @@
 import { createContext } from "react";
+import { TemplateType } from "../components/Editor/interface";
 
 export type DesignerContextType = {
   name?: string;
   busHandles?: BusHandles;
-  templateType?: string;
+  templateType?: TemplateType;
 };
 export const defaultConfig = {
   name: "test",
