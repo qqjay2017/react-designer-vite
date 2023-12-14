@@ -42,7 +42,7 @@ export const TableContainerSettings = () => {
       />
       <SingleSelectTypeFormItem
         label="请求方式"
-        tooltip="1111"
+        tooltip="接口的请求方式"
         value={apiMethod}
         options={[
           {

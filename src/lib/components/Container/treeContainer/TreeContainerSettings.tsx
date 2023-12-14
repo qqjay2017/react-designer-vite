@@ -42,14 +42,14 @@ export const TreeContainerSettings = () => {
   return (
     <div>
       <StrTypeFormItem
-        tooltip="完整的接口地址"
+        tooltip="完整的接口地址,如未填写,将会隐藏树"
         label="接口地址"
         value={apiUrl}
         onChange={(e: any) => setProp((props: any) => (props.apiUrl = e), 1000)}
       />
       <SingleSelectTypeFormItem
         label="请求方式"
-        tooltip="1111"
+        tooltip="接口的请求方式"
         value={apiMethod}
         options={[
           {

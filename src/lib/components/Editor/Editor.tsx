@@ -46,7 +46,7 @@ export const DesignerClient = (props: IDesignerClientProps) => {
             >
               <Viewport headerProps={props.headerProps}>
                 <Frame
-                  json={JSON.stringify(
+                  data={JSON.stringify(
                     defaultJson[props.templateType || "RelationData"]
                   )}
                 ></Frame>
